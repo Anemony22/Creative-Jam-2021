@@ -1,0 +1,116 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://resources/models/torch.glb" type="PackedScene" id=1]
+[ext_resource path="res://resources/fire/FireMask.png" type="Texture" id=2]
+[ext_resource path="res://resources/fire/HoleNoise.png" type="Texture" id=3]
+
+[sub_resource type="Shader" id=1]
+code = "// This shader is based on Minionsart's stylized fire
+// https://twitter.com/minionsart/status/1132593681452683264?s=20
+shader_type spatial;
+render_mode blend_mix;
+
+uniform sampler2D noise_texture;
+
+uniform sampler2D texture_mask;
+uniform float emission_intensity = 2.0;
+uniform float time_scale = 3.0;
+uniform vec2 texture_scale = vec2(1.0);
+uniform float edge_softness = 0.1;
+
+varying vec3 world_coord;
+varying float world_x_dot;
+
+
+void vertex() {
+	mat4 mat_world = mat4(normalize(CAMERA_MATRIX[0])*length(WORLD_MATRIX[0]),normalize(CAMERA_MATRIX[1])*length(WORLD_MATRIX[0]),normalize(CAMERA_MATRIX[2])*length(WORLD_MATRIX[2]),WORLD_MATRIX[3]);
+	mat_world = mat_world * mat4( vec4(cos(INSTANCE_CUSTOM.x),-sin(INSTANCE_CUSTOM.x), 0.0, 0.0), vec4(sin(INSTANCE_CUSTOM.x), cos(INSTANCE_CUSTOM.x), 0.0, 0.0),vec4(0.0, 0.0, 1.0, 0.0),vec4(0.0, 0.0, 0.0, 1.0));
+	MODELVIEW_MATRIX = INV_CAMERA_MATRIX * mat_world;
+	
+	world_coord = (mat_world * vec4(VERTEX, 1.0)).rgb;
+	vec4 world_normal = (mat_world * vec4(NORMAL, 0.0));
+	world_x_dot =  abs(dot(normalize(world_normal.rgb), vec3(1.0,0.0,0.0)));
+}
+
+
+void fragment() {
+	float mask = texture(texture_mask, UV).r;
+	
+	vec2 time_based_pan = vec2(0.2, 1.0) * (- TIME * time_scale);
+	float noise_xy = texture(noise_texture, world_coord.xy * texture_scale + time_based_pan).r;
+	float noise_zy = texture(noise_texture, world_coord.zy * texture_scale + time_based_pan + vec2(0.7, 0.3)).r;
+	
+	float noise = mix(noise_xy, noise_zy, clamp(world_x_dot, 0.0, 1.0));
+	
+	ALBEDO = COLOR.rgb;
+	EMISSION = ALBEDO * emission_intensity;
+	
+	float erosion_amount = (1.0 - COLOR.a);
+	float alpha = (noise * mask) - erosion_amount;
+	
+	alpha = clamp(alpha, 0.0, 1.0);
+	ALPHA = smoothstep(0.0, edge_softness, alpha);
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/emission_intensity = 2.0
+shader_param/time_scale = 2.0
+shader_param/texture_scale = Vector2( 1, 1 )
+shader_param/edge_softness = 0.1
+shader_param/noise_texture = ExtResource( 3 )
+shader_param/texture_mask = ExtResource( 2 )
+
+[sub_resource type="Gradient" id=5]
+colors = PoolColorArray( 0.717647, 0.447059, 0.109804, 1, 0.290196, 0.0313726, 0.172549, 0 )
+
+[sub_resource type="GradientTexture" id=6]
+gradient = SubResource( 5 )
+width = 128
+
+[sub_resource type="Curve" id=7]
+_data = [ Vector2( 0, 0.224729 ), 0.0, 0.983115, 0, 0, Vector2( 0.76933, 1 ), 1.48561, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=8]
+width = 128
+curve = SubResource( 7 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+direction = Vector3( 0, 1, 0 )
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 1.0
+linear_accel = 3.0
+scale = 4.0
+scale_random = 1.0
+scale_curve = SubResource( 8 )
+color_ramp = SubResource( 6 )
+
+[sub_resource type="QuadMesh" id=4]
+size = Vector2( 0.5, 0.5 )
+
+[node name="Torch" type="Spatial"]
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 1.04308e-07, 3.57628e-08, -1.04308e-07, 1, -2.38419e-08, -3.57628e-08, 2.38419e-08, 1, 0, 0.855149, 0 )
+light_color = Color( 0.858824, 0.631373, 0.301961, 1 )
+shadow_enabled = true
+shadow_color = Color( 0.0823529, 0.027451, 0.227451, 1 )
+shadow_bias = 0.1
+shadow_contact = 0.05
+omni_range = 6.0
+
+[node name="torch" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, -3.1665e-08, 8.19564e-08, -9.31323e-09, 0.999999, -8.9407e-08, -5.96046e-08, 4.47035e-08, 1, 0, 0, 0 )
+
+[node name="Fire" type="Particles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.616, 0 )
+material_override = SubResource( 2 )
+cast_shadow = 0
+amount = 50
+lifetime = 0.5
+randomness = 0.62
+local_coords = false
+draw_order = 1
+process_material = SubResource( 3 )
+draw_pass_1 = SubResource( 4 )
