@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://resources/models/torch.glb" type="PackedScene" id=1]
+[ext_resource path="res://resources/models/torch/torch.glb" type="PackedScene" id=1]
 [ext_resource path="res://resources/fire/FireMask.png" type="Texture" id=2]
 [ext_resource path="res://resources/fire/HoleNoise.png" type="Texture" id=3]
 
@@ -61,21 +61,21 @@ shader_param/edge_softness = 0.1
 shader_param/noise_texture = ExtResource( 3 )
 shader_param/texture_mask = ExtResource( 2 )
 
-[sub_resource type="Gradient" id=5]
+[sub_resource type="Gradient" id=3]
 colors = PoolColorArray( 0.717647, 0.447059, 0.109804, 1, 0.290196, 0.0313726, 0.172549, 0 )
 
-[sub_resource type="GradientTexture" id=6]
-gradient = SubResource( 5 )
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
 width = 128
 
-[sub_resource type="Curve" id=7]
+[sub_resource type="Curve" id=5]
 _data = [ Vector2( 0, 0.224729 ), 0.0, 0.983115, 0, 0, Vector2( 0.76933, 1 ), 1.48561, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=8]
+[sub_resource type="CurveTexture" id=6]
 width = 128
-curve = SubResource( 7 )
+curve = SubResource( 5 )
 
-[sub_resource type="ParticlesMaterial" id=3]
+[sub_resource type="ParticlesMaterial" id=7]
 direction = Vector3( 0, 1, 0 )
 spread = 0.0
 gravity = Vector3( 0, 0, 0 )
@@ -83,10 +83,10 @@ initial_velocity = 1.0
 linear_accel = 3.0
 scale = 4.0
 scale_random = 1.0
-scale_curve = SubResource( 8 )
-color_ramp = SubResource( 6 )
+scale_curve = SubResource( 6 )
+color_ramp = SubResource( 4 )
 
-[sub_resource type="QuadMesh" id=4]
+[sub_resource type="QuadMesh" id=8]
 size = Vector2( 0.5, 0.5 )
 
 [node name="Torch" type="Spatial"]
@@ -100,17 +100,16 @@ shadow_bias = 0.1
 shadow_contact = 0.05
 omni_range = 6.0
 
-[node name="torch" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, -3.1665e-08, 8.19564e-08, -9.31323e-09, 0.999999, -8.9407e-08, -5.96046e-08, 4.47035e-08, 1, 0, 0, 0 )
-
 [node name="Fire" type="Particles" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.616, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.563208, 0 )
 material_override = SubResource( 2 )
 cast_shadow = 0
-amount = 50
+amount = 30
 lifetime = 0.5
 randomness = 0.62
 local_coords = false
 draw_order = 1
-process_material = SubResource( 3 )
-draw_pass_1 = SubResource( 4 )
+process_material = SubResource( 7 )
+draw_pass_1 = SubResource( 8 )
+
+[node name="torch" parent="." instance=ExtResource( 1 )]

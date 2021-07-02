@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/torch.glb-8437613fdfab4ab65dee001dd5761b64.scn"
+path="res://.import/torch.glb-ad202a5ba1ae35e0aca888d6ab41488a.scn"
 
 [deps]
 
-source_file="res://resources/models/torch.glb"
-dest_files=[ "res://.import/torch.glb-8437613fdfab4ab65dee001dd5761b64.scn" ]
+source_file="res://resources/models/torch/torch.glb"
+dest_files=[ "res://.import/torch.glb-ad202a5ba1ae35e0aca888d6ab41488a.scn" ]
 
 [params]
 
