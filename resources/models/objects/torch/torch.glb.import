@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/torch.glb-ad202a5ba1ae35e0aca888d6ab41488a.scn"
+path="res://.import/torch.glb-fcb8d04d928c3ca14883882e970bc73f.scn"
 
 [deps]
 
-source_file="res://resources/models/torch/torch.glb"
-dest_files=[ "res://.import/torch.glb-ad202a5ba1ae35e0aca888d6ab41488a.scn" ]
+source_file="res://resources/models/objects/torch/torch.glb"
+dest_files=[ "res://.import/torch.glb-fcb8d04d928c3ca14883882e970bc73f.scn" ]
 
 [params]
 
@@ -16,13 +16,13 @@ nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""
 nodes/storage=0
-nodes/use_legacy_names=false
+nodes/use_legacy_names=true
 materials/location=1
 materials/storage=1
 materials/keep_on_reimport=true
 meshes/compress=true
 meshes/ensure_tangents=true
-meshes/storage=0
+meshes/storage=1
 meshes/light_baking=0
 meshes/lightmap_texel_size=0.1
 skins/use_named_skins=true

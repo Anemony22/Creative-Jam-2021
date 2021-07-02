@@ -22,4 +22,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.484852, 0 )
 [node name="Camera" type="Camera" parent="Pivot"]
 
 [node name="Torch" parent="Pivot" instance=ExtResource( 2 )]
-transform = Transform( 0.986749, -0.0230895, 0.160602, -0.0196765, 0.965489, 0.259701, -0.161055, -0.25942, 0.952241, 1.03905, -0.725217, -1.02871 )
+transform = Transform( 0.992949, -0.069113, -0.0963092, 0.0910941, 0.964762, 0.246852, 0.0758548, -0.253884, 0.964255, 0.887167, -0.555463, -0.938129 )
