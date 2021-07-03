@@ -95,10 +95,11 @@ size = Vector2( 0.5, 0.5 )
 transform = Transform( 1, 2.78469e-07, 3.57628e-08, -2.78469e-07, 1, -8.93064e-09, -3.57628e-08, 8.93063e-09, 1, 0, 1.10713, 0 )
 light_color = Color( 0.858824, 0.631373, 0.301961, 1 )
 shadow_enabled = true
-shadow_color = Color( 0.0823529, 0.027451, 0.227451, 1 )
-shadow_bias = 0.1
-shadow_contact = 0.05
-omni_range = 6.0
+shadow_color = Color( 0.129412, 0.0196078, 0.223529, 1 )
+shadow_bias = 0.25
+shadow_contact = 0.2
+omni_range = 21.1
+omni_attenuation = 2.21914
 
 [node name="Fire" type="Particles" parent="." index="2"]
 transform = Transform( 0.137253, 0, 0, 0, 0.36642, 0, 0, 0, 0.137253, 0, 0.60308, 0 )
