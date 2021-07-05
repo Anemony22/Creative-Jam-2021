@@ -107,7 +107,6 @@ material_override = SubResource( 2 )
 cast_shadow = 0
 amount = 30
 lifetime = 0.5
-randomness = 0.62
 local_coords = false
 draw_order = 1
 process_material = SubResource( 7 )
