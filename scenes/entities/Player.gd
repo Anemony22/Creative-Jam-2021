@@ -8,6 +8,8 @@ var velocity = Vector3()
 
 var lerpTime = 0.0
 
+onready var prev_angle = rotation.y
+
 func get_input():
 	var input_dir = Vector3()
 
@@ -31,7 +33,10 @@ func _unhandled_input(event):
 		$CameraPivot.rotation.x = clamp($CameraPivot.rotation.x, -1.2, 1.2)
 
 func _physics_process(delta):
-	$TorchPivot.rotation = lerp($TorchPivot.rotation, $CameraPivot.rotation, 0.2)
+	$TorchPivot.rotation.x = lerp($TorchPivot.rotation.x, $CameraPivot.rotation.x, 0.2)
+	$TorchPivot.rotation.y = lerp(prev_angle - rotation.y, 0, 0.2)
+	
+	prev_angle = rotation.y + $TorchPivot.rotation.y
 	
 	velocity.y += gravity * delta
 	var desired_velocity = get_input() * max_speed
