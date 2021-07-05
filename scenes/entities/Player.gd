@@ -31,14 +31,6 @@ func _unhandled_input(event):
 		$CameraPivot.rotation.x = clamp($CameraPivot.rotation.x, -1.2, 1.2)
 
 func _physics_process(delta):
-	velocity.y += gravity * delta
-	var desired_velocity = get_input() * max_speed
-
-	velocity.x = desired_velocity.x
-	velocity.z = desired_velocity.z
-	velocity = move_and_slide(velocity, Vector3.UP, true)
-
-func _process(delta):
 	$TorchPivot.rotation.x = lerp($TorchPivot.rotation.x, $CameraPivot.rotation.x, 0.2)
 
 	var angle_diff = prev_angle - rotation.y
@@ -51,3 +43,10 @@ func _process(delta):
 	$TorchPivot.rotation.y = lerp(clamp(angle_diff, -0.35, 0.35), 0, 0.5)
 
 	prev_angle = rotation.y + $TorchPivot.rotation.y
+	
+	velocity.y += gravity * delta
+	var desired_velocity = get_input() * max_speed
+
+	velocity.x = desired_velocity.x
+	velocity.z = desired_velocity.z
+	velocity = move_and_slide(velocity, Vector3.UP, true)
