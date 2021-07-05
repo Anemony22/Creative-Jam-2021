@@ -6,8 +6,6 @@ export var mouse_sensitivity = 0.002
 
 var velocity = Vector3()
 
-var lerpTime = 0.0
-
 onready var prev_angle = rotation.y
 
 func get_input():
@@ -34,8 +32,16 @@ func _unhandled_input(event):
 
 func _physics_process(delta):
 	$TorchPivot.rotation.x = lerp($TorchPivot.rotation.x, $CameraPivot.rotation.x, 0.2)
-	$TorchPivot.rotation.y = lerp(prev_angle - rotation.y, 0, 0.2)
-	
+
+	var angle_diff = prev_angle - rotation.y
+
+	if angle_diff > PI:
+		angle_diff -= 2*PI
+	elif angle_diff < -PI:
+		angle_diff += 2*PI
+
+	$TorchPivot.rotation.y = lerp(clamp(angle_diff, -0.35, 0.35), 0, 0.2)
+
 	prev_angle = rotation.y + $TorchPivot.rotation.y
 	
 	velocity.y += gravity * delta
