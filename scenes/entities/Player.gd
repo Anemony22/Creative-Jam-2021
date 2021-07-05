@@ -1,12 +1,12 @@
 extends KinematicBody
 
-onready var camera = $Pivot/Camera
-
 var gravity = -30
 export var max_speed = 8
 export var mouse_sensitivity = 0.002
 
 var velocity = Vector3()
+
+var lerpTime = 0.0
 
 func get_input():
 	var input_dir = Vector3()
@@ -19,7 +19,7 @@ func get_input():
 		input_dir += -global_transform.basis.x
 	if Input.is_action_pressed("move_right"):
 		input_dir += global_transform.basis.x
-		
+	
 	input_dir = input_dir.normalized()
 	
 	return input_dir
@@ -27,10 +27,12 @@ func get_input():
 func _unhandled_input(event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(-event.relative.x * mouse_sensitivity)
-		$Pivot.rotate_x(-event.relative.y * mouse_sensitivity)
-		$Pivot.rotation.x = clamp($Pivot.rotation.x, -1.2, 1.2)
+		$CameraPivot.rotate_x(-event.relative.y * mouse_sensitivity)
+		$CameraPivot.rotation.x = clamp($CameraPivot.rotation.x, -1.2, 1.2)
 
 func _physics_process(delta):
+	$TorchPivot.rotation = lerp($TorchPivot.rotation, $CameraPivot.rotation, 0.2)
+	
 	velocity.y += gravity * delta
 	var desired_velocity = get_input() * max_speed
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/entities/Player.gd" type="Script" id=1]
 [ext_resource path="res://scenes/objects/Torch.tscn" type="PackedScene" id=2]
+[ext_resource path="res://resources/images/Cross Hair.png" type="Texture" id=3]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 1.49692
@@ -16,10 +17,29 @@ max_speed = 6
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -0.254985 )
 shape = SubResource( 1 )
 
-[node name="Pivot" type="Spatial" parent="."]
+[node name="CameraPivot" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.484852, 0 )
 
-[node name="Camera" type="Camera" parent="Pivot"]
+[node name="Camera" type="Camera" parent="CameraPivot"]
 
-[node name="Torch" parent="Pivot" instance=ExtResource( 2 )]
-transform = Transform( 0.992949, -0.069113, -0.0963092, 0.0910941, 0.964762, 0.246852, 0.0758548, -0.253884, 0.964255, 0.887167, -0.555463, -0.938129 )
+[node name="TorchPivot" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.485, 0 )
+
+[node name="Torch" parent="TorchPivot" instance=ExtResource( 2 )]
+transform = Transform( 0.863924, -0.466124, -0.190691, 0.497876, 0.847508, 0.183979, 0.0758548, -0.253884, 0.964255, 1.20379, 0.0626097, -1.02123 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="HUD"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+rect_scale = Vector2( 0.2, 0.2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="HUD/Control"]
+modulate = Color( 1, 1, 1, 0.211765 )
+texture = ExtResource( 3 )

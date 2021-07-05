@@ -45,6 +45,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.72739, 0 )
 
 [node name="GodLight" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.59394, 0 )
+visible = false
 omni_range = 74.2967
 __meta__ = {
 "_editor_description_": "A light that illumiates the entire cave. Disable when not testing."
