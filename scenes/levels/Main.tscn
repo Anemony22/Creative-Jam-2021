@@ -45,22 +45,17 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.72739, 0 )
 
 [node name="GodLight" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.59394, 0 )
-visible = false
 omni_range = 74.2967
 __meta__ = {
 "_editor_description_": "A light that illumiates the entire cave. Disable when not testing."
 }
 
-[node name="CaveBase" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00238782, 0, 0.00396776 )
+[node name="CaveBase" type="Node" parent="."]
 __meta__ = {
 "_editor_description_": "All the rock meshes that make up the base cave"
 }
 
-[node name="Shurbs" type="Spatial" parent="CaveBase"]
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="Shurbs" type="Node" parent="CaveBase"]
 
 [node name="shrub_1" type="MeshInstance" parent="CaveBase/Shurbs"]
 transform = Transform( 1.17506, 0.107855, 0.822358, -0.0943138, 1.4342, -0.0533365, -0.824021, -0.0103497, 1.1788, -1.85528, 2.31227, 26.8943 )
@@ -580,8 +575,8 @@ transform = Transform( 1, 0, 0, 0, 0.544195, 0, 0, 0, 1, 9.62774, 2.2576, -11.03
 [node name="small_rock39" parent="CaveBase/Decor" instance=ExtResource( 26 )]
 transform = Transform( 1.34097, 0.552796, 1.00976, -0.519923, 1.67393, -0.225935, -1.02707, -0.125629, 1.43274, 12.2924, 1.88729, 10.9991 )
 
-[node name="small_rock3" parent="CaveBase/Decor/small_rock39" instance=ExtResource( 25 )]
-transform = Transform( 1.28159, -0.218708, 0.390349, -0.31437, 2.05694, -0.00575656, -0.318398, -0.225894, 1.21444, -0.535166, -0.272942, 1.09526 )
+[node name="small_rock40" parent="CaveBase/Decor" instance=ExtResource( 25 )]
+transform = Transform( 1.22329, 0.615689, 1.74656, -1.12062, 3.60792, -0.486972, -1.73297, -0.35743, 1.33978, 12.5298, 1.46119, 13.1523 )
 
 [node name="medium_rock22" parent="CaveBase/Decor" instance=ExtResource( 23 )]
 transform = Transform( -0.501429, 0.0727813, 1.69312, -0.519923, 1.67393, -0.225935, -1.61296, -0.5622, -0.453521, 15.0837, 0.674903, 9.539 )
@@ -598,6 +593,9 @@ __meta__ = {
 transform = Transform( 0.938668, -0.332334, -0.0919644, 0, -0.2667, 0.96378, -0.344823, -0.904669, -0.250343, 9.61392, 11.2039, 46.1921 )
 mesh = SubResource( 1 )
 material/0 = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Tree" parent="Outside" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.83457, 1.46684, 39.5753 )
@@ -611,17 +609,26 @@ shadow_enabled = true
 shadow_bias = 0.7
 omni_range = 13.3966
 omni_attenuation = 2.0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="tree_1" type="MeshInstance" parent="Outside"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.13114, 2.40895, 43.1931 )
 mesh = ExtResource( 13 )
 material/0 = null
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="tree_2" type="MeshInstance" parent="Outside"]
 transform = Transform( 0.165048, 0.0761541, -0.983341, -0.000910511, 0.997026, 0.0770611, 0.986285, -0.0118234, 0.164627, 6.0002, 2.28593, 45.1562 )
 mesh = ExtResource( 14 )
 material/0 = null
 material/1 = null
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="large_rock5" parent="Outside" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.69187, 1.69675, 44.2294 )
