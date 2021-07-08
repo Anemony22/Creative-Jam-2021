@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://resources/models/objects/torch/torch.glb" type="PackedScene" id=1]
-[ext_resource path="res://resources/fire/FireMask.png" type="Texture" id=2]
 [ext_resource path="res://resources/fire/HoleNoise.png" type="Texture" id=3]
+[ext_resource path="res://resources/fire/FireMask.png" type="Texture" id=4]
 
 [sub_resource type="Shader" id=1]
 code = "// This shader is based on Minionsart's stylized fire
@@ -59,21 +59,21 @@ shader_param/time_scale = 2.0
 shader_param/texture_scale = Vector2( 1, 1 )
 shader_param/edge_softness = 0.1
 shader_param/noise_texture = ExtResource( 3 )
-shader_param/texture_mask = ExtResource( 2 )
+shader_param/texture_mask = ExtResource( 4 )
 
-[sub_resource type="Gradient" id=3]
+[sub_resource type="Gradient" id=5]
 colors = PoolColorArray( 0.717647, 0.447059, 0.109804, 1, 0.290196, 0.0313726, 0.172549, 0 )
 
-[sub_resource type="GradientTexture" id=4]
-gradient = SubResource( 3 )
+[sub_resource type="GradientTexture" id=6]
+gradient = SubResource( 5 )
 width = 128
 
-[sub_resource type="Curve" id=5]
+[sub_resource type="Curve" id=3]
 _data = [ Vector2( 0, 0.224729 ), 0.0, 0.983115, 0, 0, Vector2( 0.76933, 1 ), 1.48561, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=6]
+[sub_resource type="CurveTexture" id=4]
 width = 128
-curve = SubResource( 5 )
+curve = SubResource( 3 )
 
 [sub_resource type="ParticlesMaterial" id=7]
 direction = Vector3( 0, 1, 0 )
@@ -83,8 +83,8 @@ initial_velocity = 1.0
 linear_accel = 3.0
 scale = 4.0
 scale_random = 1.0
-scale_curve = SubResource( 6 )
-color_ramp = SubResource( 4 )
+scale_curve = SubResource( 4 )
+color_ramp = SubResource( 6 )
 
 [sub_resource type="QuadMesh" id=8]
 size = Vector2( 0.5, 0.5 )
@@ -105,7 +105,7 @@ omni_attenuation = 2.21914
 transform = Transform( 0.137253, 0, 0, 0, 0.36642, 0, 0, 0, 0.137253, 0, 0.60308, 0 )
 material_override = SubResource( 2 )
 cast_shadow = 0
-amount = 30
+amount = 15
 lifetime = 0.5
 local_coords = false
 draw_order = 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/levels/Main.gd" type="Script" id=2]
@@ -30,15 +30,19 @@
 [ext_resource path="res://scenes/environment/rocks/small/small_rock4.tscn" type="PackedScene" id=28]
 [ext_resource path="res://scenes/environment/rocks/small/small_rock5.tscn" type="PackedScene" id=29]
 
-[sub_resource type="BoxShape" id=3]
+[sub_resource type="BoxShape" id=1]
 extents = Vector3( 30, 1, 30 )
 
-[sub_resource type="PlaneMesh" id=1]
+[sub_resource type="PlaneMesh" id=2]
 size = Vector2( 30, 30 )
 
-[sub_resource type="SpatialMaterial" id=2]
+[sub_resource type="SpatialMaterial" id=3]
 flags_unshaded = true
 albedo_color = Color( 0.501961, 0.737255, 0.847059, 1 )
+
+[sub_resource type="CubeMesh" id=4]
+
+[sub_resource type="BoxShape" id=5]
 
 [node name="Main" type="Node"]
 script = ExtResource( 2 )
@@ -596,7 +600,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape" type="CollisionShape" parent="CaveBase/Height Collision"]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="Outside" type="Node" parent="."]
 __meta__ = {
@@ -605,8 +609,8 @@ __meta__ = {
 
 [node name="Sky" type="MeshInstance" parent="Outside"]
 transform = Transform( 0.938668, -0.332334, -0.0919644, 0, -0.2667, 0.96378, -0.344823, -0.904669, -0.250343, 9.61392, 11.2039, 46.1921 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 2 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -646,3 +650,18 @@ __meta__ = {
 
 [node name="large_rock5" parent="Outside" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.69187, 1.69675, 44.2294 )
+
+[node name="TestInteractionCube" type="StaticBody" parent="." groups=[
+"artefact",
+]]
+transform = Transform( 0.483859, 0.0024446, -0.125995, 0.00517497, 0.499099, 0.0295571, 0.125913, -0.0299069, 0.482961, -7.9374, 2.28762, -5.64372 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="TestInteractionCube"]
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="TestInteractionCube"]
+shape = SubResource( 5 )

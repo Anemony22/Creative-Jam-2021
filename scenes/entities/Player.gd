@@ -11,6 +11,7 @@ onready var prev_angle = rotation.y
 func get_input():
 	var input_dir = Vector3()
 
+	# Directional movement
 	if Input.is_action_pressed("move_forward"):
 		input_dir += -global_transform.basis.z
 	if Input.is_action_pressed("move_back"):
@@ -25,12 +26,14 @@ func get_input():
 	return input_dir
 
 func _unhandled_input(event):
+	# Mouse camera movement
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		$CameraPivot.rotate_x(-event.relative.y * mouse_sensitivity)
 		$CameraPivot.rotation.x = clamp($CameraPivot.rotation.x, -1.2, 1.2)
 
 func _physics_process(delta):
+	# Torch lagged rotation
 	$TorchPivot.rotation.x = lerp($TorchPivot.rotation.x, $CameraPivot.rotation.x, 0.2)
 
 	var angle_diff = prev_angle - rotation.y
@@ -44,9 +47,20 @@ func _physics_process(delta):
 
 	prev_angle = rotation.y + $TorchPivot.rotation.y
 	
+	# Movement
 	velocity.y += gravity * delta
 	var desired_velocity = get_input() * max_speed
 
 	velocity.x = desired_velocity.x
 	velocity.z = desired_velocity.z
 	velocity = move_and_slide(velocity, Vector3.UP, true)
+	
+	# Interaction
+	if $CameraPivot/Camera/RayCast.is_colliding():
+		var collision: Node = $CameraPivot/Camera/RayCast.get_collider()
+		
+		if collision.is_in_group("artefact"):
+			$HUD/RayCheck/Interact.text = "Interact with " + collision.name
+			$HUD/RayCheck.visible = true
+	else:
+		$HUD/RayCheck.visible = false
