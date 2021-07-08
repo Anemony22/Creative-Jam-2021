@@ -29,8 +29,8 @@
 [ext_resource path="res://scenes/environment/rocks/small/small_rock2.tscn" type="PackedScene" id=27]
 [ext_resource path="res://scenes/environment/rocks/small/small_rock4.tscn" type="PackedScene" id=28]
 [ext_resource path="res://scenes/environment/rocks/small/small_rock5.tscn" type="PackedScene" id=29]
-[ext_resource path="res://scenes/objects/artefacts/TestInteractionCube.tscn" type="PackedScene" id=30]
-[ext_resource path="res://scenes/objects/Interactable.tscn" type="PackedScene" id=31]
+[ext_resource path="res://scenes/objects/interactables/artefacts/TestInteractionCube.tscn" type="PackedScene" id=30]
+[ext_resource path="res://scenes/objects/interactables/Interactable.tscn" type="PackedScene" id=31]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 30, 1, 30 )

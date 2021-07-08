@@ -74,7 +74,7 @@ func _physics_process(delta):
 		if collision.has_node("Interactable"):
 			var interactable = collision.get_node("Interactable")
 			
-			$HUD/RayCheck/Interact.text = "Interact with " + interactable.title
+			$HUD/RayCheck/HBoxContainer/Interact.text = "Interact with " + interactable.title
 			$HUD/RayCheck.visible = true
 	else:
 		$HUD/RayCheck.visible = false
