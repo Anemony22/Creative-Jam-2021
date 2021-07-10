@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/levels/Main.gd" type="Script" id=2]
@@ -29,11 +29,13 @@
 [ext_resource path="res://scenes/environment/rocks/small/small_rock2.tscn" type="PackedScene" id=27]
 [ext_resource path="res://scenes/environment/rocks/small/small_rock4.tscn" type="PackedScene" id=28]
 [ext_resource path="res://scenes/environment/rocks/small/small_rock5.tscn" type="PackedScene" id=29]
+[ext_resource path="res://scenes/visuals/DecalArea.tscn" type="PackedScene" id=31]
+[ext_resource path="res://icon.png" type="Texture" id=32]
 
-[sub_resource type="PlaneMesh" id=1]
+[sub_resource type="PlaneMesh" id=2]
 size = Vector2( 30, 30 )
 
-[sub_resource type="SpatialMaterial" id=2]
+[sub_resource type="SpatialMaterial" id=3]
 flags_unshaded = true
 albedo_color = Color( 0.501961, 0.737255, 0.847059, 1 )
 
@@ -437,7 +439,7 @@ transform = Transform( -1.04157, -0.0492217, -0.130028, 0.0441934, -0.685171, 0.
 transform = Transform( 0.492846, -0.0235422, -1.27936, -0.0622883, -0.728207, 0.00607008, -1.27745, 0.0468656, -0.494048, -8.43206, 0.576234, -4.80286 )
 
 [node name="flat_rock8" parent="CaveBase/Decor" instance=ExtResource( 7 )]
-transform = Transform( -0.208972, 0.0130021, 1.3553, -0.0282866, -0.729254, 0.0113353, 1.35432, -0.0325059, 0.209521, -2.87239, 0.769522, -2.66459 )
+transform = Transform( -0.208972, 0.0130021, 1.3553, -0.0282866, -0.729254, 0.0113353, 1.35432, -0.0325059, 0.209521, -2.89489, 0.769523, -2.6531 )
 
 [node name="medium_rock16" parent="CaveBase/Decor" instance=ExtResource( 24 )]
 transform = Transform( 1.12689, -0.0225705, -0.395676, 0.00458882, 1.19327, -0.0549986, 0.396293, 0.0503635, 1.12577, -20.1474, 1.72254, 14.6619 )
@@ -589,6 +591,16 @@ transform = Transform( -0.501429, 0.0727813, 1.69312, -0.519923, 1.67393, -0.225
 [node name="medium_rock21" parent="CaveBase/Decor" instance=ExtResource( 20 )]
 transform = Transform( 0.599153, -1.6611, -0.0717437, -0.403444, -0.21923, 1.70662, -1.61296, -0.5622, -0.453522, 13.5243, 5.02929, 12.1695 )
 
+[node name="Decal_1" parent="CaveBase" instance=ExtResource( 31 )]
+transform = Transform( -0.784765, 0, 1.99383, 0, 5, 0, -9.96916, 0, -0.156953, -19.5304, 4.6575, 2.10371 )
+valid_nodes_paths = [ NodePath("../Ext/boulder_rock4") ]
+decal_texture = ExtResource( 32 )
+
+[node name="Decal_2" parent="CaveBase" instance=ExtResource( 31 )]
+transform = Transform( -0.218194, 0, 0.975905, 0, 1, 0, -0.975905, 0, -0.218194, -6.86364, 8.26229, 3.95727 )
+valid_nodes_paths = [ NodePath("../Ext/large_rock3") ]
+decal_texture = ExtResource( 32 )
+
 [node name="Outside" type="Node" parent="."]
 __meta__ = {
 "_editor_description_": "The sun, sky plane and sun light for outside the cave"
@@ -596,8 +608,8 @@ __meta__ = {
 
 [node name="Sky" type="MeshInstance" parent="Outside"]
 transform = Transform( 0.938668, -0.332334, -0.0919644, 0, -0.2667, 0.96378, -0.344823, -0.904669, -0.250343, 9.61392, 11.2039, 46.1921 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 2 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
 
 [node name="Tree" parent="Outside" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.83457, 1.46684, 39.5753 )
