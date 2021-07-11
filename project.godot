@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Area",
+"class": "DecalArea",
+"language": "GDScript",
+"path": "res://scenes/visuals/DecalArea.gd"
+} ]
+_global_script_class_icons={
+"DecalArea": ""
+}
+
 [application]
 
 config/name="Creative Jam 2021"

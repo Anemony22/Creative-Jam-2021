@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/levels/Main.gd" type="Script" id=2]
@@ -29,8 +29,20 @@
 [ext_resource path="res://scenes/environment/rocks/small/small_rock2.tscn" type="PackedScene" id=27]
 [ext_resource path="res://scenes/environment/rocks/small/small_rock4.tscn" type="PackedScene" id=28]
 [ext_resource path="res://scenes/environment/rocks/small/small_rock5.tscn" type="PackedScene" id=29]
+[ext_resource path="res://resources/decal/static/test.jpg" type="Texture" id=30]
 [ext_resource path="res://scenes/visuals/DecalArea.tscn" type="PackedScene" id=31]
 [ext_resource path="res://icon.png" type="Texture" id=32]
+[ext_resource path="res://scenes/visuals/Animated_Decal.tscn" type="PackedScene" id=33]
+[ext_resource path="res://resources/decal/animation/test_frames/playerGrey_up2.png" type="Texture" id=34]
+[ext_resource path="res://resources/decal/animation/test_frames/playerGrey_up1.png" type="Texture" id=35]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 35 ), ExtResource( 34 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="PlaneMesh" id=2]
 size = Vector2( 30, 30 )
@@ -594,12 +606,19 @@ transform = Transform( 0.599153, -1.6611, -0.0717437, -0.403444, -0.21923, 1.706
 [node name="Decal_1" parent="CaveBase" instance=ExtResource( 31 )]
 transform = Transform( -0.784765, 0, 1.99383, 0, 5, 0, -9.96916, 0, -0.156953, -19.5304, 4.6575, 2.10371 )
 valid_nodes_paths = [ NodePath("../Ext/boulder_rock4") ]
-decal_texture = ExtResource( 32 )
+scale_texture = Vector2( 10, 5 )
+decal_texture = ExtResource( 30 )
 
 [node name="Decal_2" parent="CaveBase" instance=ExtResource( 31 )]
 transform = Transform( -0.218194, 0, 0.975905, 0, 1, 0, -0.975905, 0, -0.218194, -6.86364, 8.26229, 3.95727 )
 valid_nodes_paths = [ NodePath("../Ext/large_rock3") ]
 decal_texture = ExtResource( 32 )
+
+[node name="Animated_Decal" parent="CaveBase" instance=ExtResource( 33 )]
+transform = Transform( 0.130797, 0, -0.999658, 0, 5, 0, 4.99829, 0, 0.0261595, 16.9484, 7.6245, -2.57691 )
+valid_nodes_paths = [ NodePath("../Ext/boulder_rock3") ]
+decal_offset = Vector2( 2.5, 2.5 )
+frames = SubResource( 4 )
 
 [node name="Outside" type="Node" parent="."]
 __meta__ = {

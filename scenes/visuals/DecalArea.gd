@@ -1,5 +1,7 @@
 extends Area
 
+class_name DecalArea
+
 export(float) var normal_push = 0.01
 export(int) var TIME_WAIT_MAX = 10
 export(Array, NodePath) var valid_nodes_paths
@@ -8,6 +10,8 @@ export(Vector2) var scale_texture = Vector2(1, 1)
 export(Vector2) var offset_texture = Vector2(0, 0)
 
 export(Texture) var decal_texture
+
+signal mesh_ready
 
 var time_out = 0
 var decal_shader = preload("decal_shader.shader")
@@ -23,7 +27,7 @@ func _physics_process(_delta):
 	# Sets up for a one-time process to setup the handling of the meshes.
 	var bodies = get_overlapping_bodies()
 	
-	if bodies:
+	if bodies and valid_nodes_paths.size() > 0:
 		var area_planes = [
 			Plane(Vector3.UP, 1),
 			Plane(Vector3.DOWN, 1),
@@ -57,12 +61,18 @@ func _physics_process(_delta):
 		# for body in bodies:
 		# 	body.hide()
 		
+		emit_signal("mesh_ready")
+		
 		set_physics_process(false)
 	elif time_out == TIME_WAIT_MAX:
 		# Free up resources if not intersecting with any bodies after the time out period expires.
 		queue_free()
 	else:
 		time_out += 1
+
+func update_mesh_texture(texture):
+	var material = decal_mesh.get_surface_material(0)
+	material.set_shader_param("decal", texture)
 
 # Generates a new mesh instance for the decal
 func generate_decal_mesh_instance(bodies, area_planes):
@@ -158,35 +168,35 @@ func clip_mesh(mesh_verts, mesh_normals, area_planes):
 	var new_normal_pool = PoolVector3Array()
 
 	for i in range(0, mesh_verts.size(), 3):
-		if mesh_normals[i].dot(Vector3.BACK) > 0:
-			var tmp_vert_pool = PoolVector3Array()
-			tmp_vert_pool.append(mesh_verts[i])
-			tmp_vert_pool.append(mesh_verts[i + 1])
-			tmp_vert_pool.append(mesh_verts[i + 2])
+		# if mesh_normals[i].dot(Vector3.BACK) > 0:
+		var tmp_vert_pool = PoolVector3Array()
+		tmp_vert_pool.append(mesh_verts[i])
+		tmp_vert_pool.append(mesh_verts[i + 1])
+		tmp_vert_pool.append(mesh_verts[i + 2])
 
-			var tmp_normal_pool = PoolVector3Array()
-			tmp_normal_pool.append(mesh_normals[i])
-			tmp_normal_pool.append(mesh_normals[i + 1])
-			tmp_normal_pool.append(mesh_normals[i + 2])
+		var tmp_normal_pool = PoolVector3Array()
+		tmp_normal_pool.append(mesh_normals[i])
+		tmp_normal_pool.append(mesh_normals[i + 1])
+		tmp_normal_pool.append(mesh_normals[i + 2])
 
-			var status = is_in_area(tmp_vert_pool, area_planes)
+		var status = is_in_area(tmp_vert_pool, area_planes)
 
-			if status == INSIDE:
-				new_vert_pool.append_array(tmp_vert_pool)
-				new_normal_pool.append_array(tmp_normal_pool)
-			elif status == PARTIALLY:
-				var pools = clip_triangle(tmp_vert_pool, tmp_normal_pool, area_planes)
+		if status == INSIDE:
+			new_vert_pool.append_array(tmp_vert_pool)
+			new_normal_pool.append_array(tmp_normal_pool)
+		elif status == PARTIALLY:
+			var pools = clip_triangle(tmp_vert_pool, tmp_normal_pool, area_planes)
 
-				var verts = pools[0]
-				var normals = pools[1]
+			var verts = pools[0]
+			var normals = pools[1]
 
-				pools = clip_mesh(verts, normals, area_planes)
+			pools = clip_mesh(verts, normals, area_planes)
 
-				verts = pools[0]
-				normals = pools[1]
+			verts = pools[0]
+			normals = pools[1]
 
-				new_vert_pool.append_array(verts)
-				new_normal_pool.append_array(normals)
+			new_vert_pool.append_array(verts)
+			new_normal_pool.append_array(normals)
 				
 	return [new_vert_pool, new_normal_pool]
 
@@ -256,8 +266,8 @@ func vertex_to_uv(vertices):
 		var uv = Vector2()
 		# uv.x = (vert.x / scale.x) * scale_texture.x
 		# uv.y = (vert.y / scale.y) * scale_texture.y
-		uv.x = vert.x * scale.x
-		uv.y = -vert.y * scale.y
+		uv.x = (vert.x + 1) * scale.x * 0.5
+		uv.y = -(vert.y - 1) * scale.y * 0.5
 		uv_pool.append(uv)
 
 	return uv_pool
