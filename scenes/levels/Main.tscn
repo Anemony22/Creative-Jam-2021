@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/levels/Main.gd" type="Script" id=2]
@@ -31,6 +31,12 @@
 [ext_resource path="res://scenes/environment/rocks/small/small_rock5.tscn" type="PackedScene" id=29]
 [ext_resource path="res://scenes/objects/interactables/artefacts/TestInteractionCube.tscn" type="PackedScene" id=30]
 [ext_resource path="res://scenes/objects/interactables/Interactable.tscn" type="PackedScene" id=31]
+[ext_resource path="res://resources/models/objects/artifacts/Shield.mesh" type="ArrayMesh" id=32]
+[ext_resource path="res://resources/models/objects/artifacts/SpearThrower.mesh" type="ArrayMesh" id=33]
+[ext_resource path="res://resources/models/objects/artifacts/Bullroarer.mesh" type="ArrayMesh" id=34]
+[ext_resource path="res://resources/models/objects/artifacts/Boomerang.mesh" type="ArrayMesh" id=35]
+[ext_resource path="res://resources/models/objects/artifacts/Doo.mesh" type="ArrayMesh" id=36]
+[ext_resource path="res://resources/models/objects/artifacts/Coolamon.mesh" type="ArrayMesh" id=37]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 30, 1, 30 )
@@ -672,3 +678,35 @@ shape = SubResource( 5 )
 [node name="Interactable" parent="StaticBody" instance=ExtResource( 31 )]
 title = "another one"
 description = "awd"
+
+[node name="Wunda" type="MeshInstance" parent="."]
+transform = Transform( -0.576677, -0.0623741, 0.0503889, 0.0777804, -0.346213, 0.461598, -0.019488, 0.46393, 0.351247, -10.0572, 3.85334, -1.28574 )
+mesh = ExtResource( 32 )
+material/0 = null
+
+[node name="SpearThrower" type="MeshInstance" parent="."]
+transform = Transform( 0.575178, 0.0522533, 0.310087, -0.0918583, 0.646137, 0.0615054, -0.300743, -0.097419, 0.574262, -6.47149, 3.80444, 1.58714 )
+mesh = ExtResource( 33 )
+material/0 = null
+material/1 = null
+
+[node name="Boomerang" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.30687, 1.94517, -2.00958 )
+mesh = ExtResource( 35 )
+material/0 = null
+
+[node name="Bullroarer" type="MeshInstance" parent="."]
+transform = Transform( -0.998832, 0.0475286, -0.00872136, 0.047873, 0.997848, -0.044806, 0.00657302, -0.0451712, -0.998958, -5.12228, 3.78826, 2.76214 )
+mesh = ExtResource( 34 )
+material/0 = null
+material/1 = null
+
+[node name="Coolamon" type="MeshInstance" parent="."]
+transform = Transform( -0.350652, -0.258836, -0.900026, -0.0939636, 0.965921, -0.241178, 0.93178, 0, -0.363024, -5.23846, 5.53079, 5.40213 )
+mesh = ExtResource( 37 )
+material/0 = null
+
+[node name="Doo" type="MeshInstance" parent="."]
+transform = Transform( 0.936423, 0.241475, 0.254564, 0.0389824, -0.79262, 0.608468, 0.348702, -0.55986, -0.751641, -6.78656, 3.40631, 0.10595 )
+mesh = ExtResource( 36 )
+material/0 = null
