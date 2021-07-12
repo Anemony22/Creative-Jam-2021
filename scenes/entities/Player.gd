@@ -6,8 +6,7 @@ export var mouse_sensitivity = 0.002
 
 var velocity = Vector3()
 
-onready var prev_angle = rotation.y
-
+onready var prev_transform = global_transform
 
 func get_input():
 	var input_dir = Vector3()
@@ -46,18 +45,17 @@ func _unhandled_input(event):
 
 func _physics_process(delta):
 	# Torch lagged rotation
-	$TorchPivot.rotation.x = lerp($TorchPivot.rotation.x, $CameraPivot.rotation.x, 0.2)
+	var target_transform = global_transform
+	target_transform = target_transform.rotated(target_transform.basis.x, $CameraPivot.rotation.x)
+	
+	var target_quat = Quat(target_transform.basis)
+	var torch_quat = Quat(prev_transform.basis)
 
-	var angle_diff = prev_angle - rotation.y
+	var desired_quat = torch_quat.slerp(target_quat, 0.4)
 
-	if angle_diff > PI:
-		angle_diff -= 2*PI
-	elif angle_diff < -PI:
-		angle_diff += 2*PI
+	$TorchPivot.global_transform.basis = Basis(desired_quat)
 
-	$TorchPivot.rotation.y = lerp(clamp(angle_diff, -0.35, 0.35), 0, 0.5)
-
-	prev_angle = rotation.y + $TorchPivot.rotation.y
+	prev_transform = $TorchPivot.global_transform
 	
 	# Movement
 	velocity.y += gravity * delta
