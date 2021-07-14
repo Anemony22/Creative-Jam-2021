@@ -1,18 +1,17 @@
-[gd_resource type="Environment" load_steps=2 format=2]
+[gd_resource type="Environment" load_steps=3 format=2]
 
-[sub_resource type="ProceduralSky" id=1]
-sky_top_color = Color( 0.0823529, 0.00784314, 0.129412, 1 )
-sky_horizon_color = Color( 0, 0, 0, 1 )
-sky_energy = 5.78
-ground_bottom_color = Color( 0, 0, 0, 1 )
-ground_horizon_color = Color( 0.0901961, 0.027451, 0.141176, 1 )
-sun_latitude = 26.63
-sun_energy = 0.5
+[ext_resource path="res://resources/images/night_sky.jpeg" type="Texture" id=1]
+
+[sub_resource type="PanoramaSky" id=1]
+panorama = ExtResource( 1 )
 
 [resource]
 background_mode = 2
 background_sky = SubResource( 1 )
+background_sky_orientation = Basis( -0.918191, -0.396138, -8.09023e-08, -0.366592, 0.849707, 0.378956, -0.150119, 0.347953, -0.925415 )
 background_color = Color( 0.215686, 0.0627451, 0.333333, 1 )
+background_energy = 0.3
+ambient_light_energy = 5.7
 fog_enabled = true
 fog_color = Color( 0.180392, 0.141176, 0.188235, 1 )
 fog_depth_begin = 1.0
@@ -30,3 +29,5 @@ glow_hdr_threshold = 1.33
 glow_hdr_luminance_cap = 36.98
 glow_hdr_scale = 2.41
 glow_bicubic_upscale = true
+adjustment_enabled = true
+adjustment_contrast = 1.1
