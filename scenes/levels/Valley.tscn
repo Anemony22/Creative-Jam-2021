@@ -1,0 +1,135 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/levels/Valley.gd" type="Script" id=2]
+[ext_resource path="res://scenes/environment/rocks/large/boulder_rock1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/environment/rocks/large/flat_rock1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/objects/interactables/artefacts/TestInteractionCube.tscn" type="PackedScene" id=30]
+[ext_resource path="res://scenes/objects/interactables/Interactable.tscn" type="PackedScene" id=31]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 30, 1, 30 )
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="BoxShape" id=3]
+
+[node name="Main" type="Node"]
+script = ExtResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.79191, 3.72739, -0.611724 )
+
+[node name="GodLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.59394, 0 )
+visible = false
+omni_range = 74.2967
+__meta__ = {
+"_editor_description_": "A light that illumiates the entire cave. Disable when not testing."
+}
+
+[node name="GodLight2" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5089, 8.59394, -75.9826 )
+visible = false
+omni_range = 74.2967
+__meta__ = {
+"_editor_description_": "A light that illumiates the entire cave. Disable when not testing."
+}
+
+[node name="ValleyBase" type="Node" parent="."]
+__meta__ = {
+"_editor_description_": "All the rock meshes that make up the base cave"
+}
+
+[node name="Ext" type="Node" parent="ValleyBase"]
+
+[node name="boulder_rock1" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
+transform = Transform( 1.09144, 3.71582, -0.205232, -0.811143, 0.140154, -2.88635, -2.6741, 1.47411, 0.791758, -16.5213, 5.38568, 11.625 )
+
+[node name="boulder_rock4" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
+transform = Transform( 1.96702, 2.10166, 0.844893, 0.667944, 0.531065, -2.87607, -2.16441, 2.07388, -0.119725, -33.0255, 4.94893, -3.66557 )
+
+[node name="boulder_rock2" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
+transform = Transform( 2.99998, 0.0109216, -0.000630863, 0, -0.172901, -2.99501, -0.0109384, 2.99499, -0.1729, 22.8312, 7.53355, -19.2413 )
+
+[node name="boulder_rock3" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
+transform = Transform( -2.31936, -1.89961, 0.109664, 0, -0.172901, -2.99501, 1.90278, -2.31551, 0.133673, 22.4616, 7.53355, -30.1261 )
+
+[node name="boulder_rock8" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
+transform = Transform( 2.99769, -0.117378, 0.00677585, 0, -0.172901, -2.99501, 0.117575, 2.99271, -0.172769, 8.09107, 3.57292, -109.008 )
+
+[node name="boulder_rock6" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
+transform = Transform( -2.82374, -1.01148, 0.0583921, 0, -0.172901, -2.99501, 1.01316, -2.81905, 0.162742, -25.1524, 2.32556, -10.13 )
+
+[node name="boulder_rock18" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
+transform = Transform( -1.84207, -0.659836, 0.0380921, 0, -0.159774, -2.76762, 0.399866, -1.1126, 0.0642299, -34.7017, 2.32556, -31.3018 )
+
+[node name="boulder_rock10" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
+transform = Transform( -2.82374, -1.01148, 0.0583921, 0, -0.172901, -2.99501, 1.01316, -2.81905, 0.162742, -28.066, -0.795758, -49.4421 )
+
+[node name="boulder_rock11" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
+transform = Transform( 2.06734, 2.17035, -0.125293, 0, -0.172901, -2.99501, -2.17396, 2.06391, -0.119148, -46.4622, 10.4484, -73.5002 )
+
+[node name="boulder_rock5" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
+transform = Transform( 2.95412, 0.521777, -0.0301221, 0, -0.172901, -2.99501, -0.742705, 4.19097, -0.241942, 8.71772, 2.9209, -67.6777 )
+
+[node name="boulder_rock14" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
+transform = Transform( -3.03195, -0.00742733, 0.000428922, 0, -0.247429, -4.28599, 0.691017, -5.50551, 0.31783, -34.8801, 0.703751, -60.722 )
+
+[node name="boulder_rock15" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
+transform = Transform( 2.1572, 3.0238, -0.174562, 0, -0.172901, -2.99501, -2.23979, 4.60079, -0.265601, -34.6307, 11.0912, -20.4948 )
+
+[node name="flat_rock1" parent="ValleyBase/Ext" instance=ExtResource( 7 )]
+transform = Transform( 2.15485, 0, -3.90663, 0, 0.702, 0, 3.36996, 0, 2.49801, 0.225192, 0.485569, 5.87204 )
+
+[node name="flat_rock7" parent="ValleyBase/Ext" instance=ExtResource( 7 )]
+transform = Transform( 2.15485, 0, -3.90663, 0, 0.702, 0, 3.36996, 0, 2.49801, 40.5221, 0.485571, 31.4444 )
+
+[node name="flat_rock5" parent="ValleyBase/Ext" instance=ExtResource( 7 )]
+transform = Transform( 1.0998, 0.036541, -2.08482, -0.488338, 0.681669, 0.876735, 3.38128, 0.00106695, 2.477, -28.1149, 4.64798, -41.8437 )
+
+[node name="flat_rock6" parent="ValleyBase/Ext" instance=ExtResource( 7 )]
+transform = Transform( -0.768852, -0.100117, 2.18897, -0.58969, 0.675203, 1.06908, -1.88764, -0.00507316, -1.25943, 5.41009, 4.15865, -78.9958 )
+
+[node name="flat_rock2" parent="ValleyBase/Ext" instance=ExtResource( 7 )]
+transform = Transform( -3.99833, 0, 0.133842, 0, 0.702, 0, -0.204108, 0, -8.19425, -8.66638, 0.418703, -40.6751 )
+
+[node name="flat_rock3" parent="ValleyBase/Ext" instance=ExtResource( 7 )]
+transform = Transform( 0.549456, 0, 8.1519, 0, 0.702, 0, -3.96566, 0, 0.842671, -8.66638, 0.418703, -85.7444 )
+
+[node name="Height Collision" type="StaticBody" parent="ValleyBase"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.08845, 0 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="ValleyBase/Height Collision"]
+shape = SubResource( 1 )
+
+[node name="Decor" type="Node" parent="ValleyBase"]
+
+[node name="Outside" type="Node" parent="."]
+__meta__ = {
+"_editor_description_": "The sun, sky plane and sun light for outside the cave"
+}
+
+[node name="TestInteractionCube" parent="." instance=ExtResource( 30 )]
+transform = Transform( 0.5, 0, 0, 0, 0.49922, 0.0279108, 0, -0.0279108, 0.49922, -3.92241, 2.27425, -5.80652 )
+
+[node name="StaticBody" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.00866, -6.98358 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="StaticBody"]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Interactable" parent="StaticBody" instance=ExtResource( 31 )]
+title = "another one"
+description = "awd"
