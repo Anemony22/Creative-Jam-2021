@@ -8,6 +8,8 @@ var velocity = Vector3()
 
 onready var prev_angle = rotation.y
 
+var last_looked_at
+
 onready var decal = preload("res://scenes/visuals/DecalArea.tscn")
 
 func get_input():
@@ -42,6 +44,8 @@ func _unhandled_input(event):
 				
 				if collision.has_node("Interactable"):
 					var interactable = collision.get_node("Interactable")
+					$HUD.display_info(interactable.title, interactable.translate, interactable.description)
+					
 					if collision.get_filename() == decal.get_path():
 						collision.emit_signal("interacted")
 
@@ -64,7 +68,7 @@ func _physics_process(delta):
 	# Movement
 	velocity.y += gravity * delta
 	var desired_velocity = get_input() * max_speed
-
+	
 	velocity.x = desired_velocity.x
 	velocity.z = desired_velocity.z
 	velocity = move_and_slide(velocity, Vector3.UP, true)
@@ -76,9 +80,19 @@ func _physics_process(delta):
 		if collision.has_node("Interactable"):
 			var interactable = collision.get_node("Interactable")
 			
-			$HUD/RayCheck/HBoxContainer/Interact.text = interactable.hud_text
+			$HUD/RayCheck/HBoxContainer/Interact.text = interactable.title
 			$HUD/RayCheck.visible = true
+			
+			last_looked_at = collision
+			
+			if collision.has_node("Mesh/Outline"):
+				collision.get_node("Mesh/Outline").visible = true
 		else:
 			$HUD/RayCheck.visible = false
 	else:
+		if last_looked_at != null:
+			if last_looked_at.has_node("Mesh/Outline"):
+				last_looked_at.get_node("Mesh/Outline").visible = false
+			last_looked_at = null
+		
 		$HUD/RayCheck.visible = false
