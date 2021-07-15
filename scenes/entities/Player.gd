@@ -85,14 +85,14 @@ func _physics_process(delta):
 			
 			last_looked_at = collision
 			
-			if collision.has_node("Mesh/Outline"):
-				collision.get_node("Mesh/Outline").visible = true
+			if collision.has_node("Outline"):
+				collision.get_node("Outline").visible = true
 		else:
 			$HUD/RayCheck.visible = false
 	else:
 		if last_looked_at != null:
-			if last_looked_at.has_node("Mesh/Outline"):
-				last_looked_at.get_node("Mesh/Outline").visible = false
+			if last_looked_at.has_node("Outline"):
+				last_looked_at.get_node("Outline").visible = false
 			last_looked_at = null
 		
 		$HUD/RayCheck.visible = false
