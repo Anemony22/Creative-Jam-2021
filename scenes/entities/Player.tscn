@@ -27,6 +27,7 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.484852, 0 )
 
 [node name="Camera" type="Camera" parent="CameraPivot"]
+far = 236.1
 
 [node name="RayCast" type="RayCast" parent="CameraPivot/Camera"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.000563622, 0 )
