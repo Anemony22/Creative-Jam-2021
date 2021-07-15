@@ -1,4 +1,4 @@
-[gd_scene load_steps=173 format=2]
+[gd_scene load_steps=174 format=2]
 
 [ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/levels/Valley.gd" type="Script" id=2]
@@ -165,6 +165,7 @@
 [ext_resource path="res://resources/decal/animation/idle_man/0072.png" type="Texture" id=163]
 [ext_resource path="res://resources/decal/animation/idle_man/0062.png" type="Texture" id=164]
 [ext_resource path="res://resources/decal/animation/idle_man/0063.png" type="Texture" id=165]
+[ext_resource path="res://scenes/environment/rocks/small/small_rock1.tscn" type="PackedScene" id=166]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 28.973, 1, 60 )
@@ -228,6 +229,13 @@ __meta__ = {
 "_editor_description_": "A light that illumiates the entire cave. Disable when not testing."
 }
 
+[node name="GodLight3" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5089, 8.59394, -129.568 )
+omni_range = 74.2967
+__meta__ = {
+"_editor_description_": "A light that illumiates the entire cave. Disable when not testing."
+}
+
 [node name="ValleyBase" type="Node" parent="."]
 __meta__ = {
 "_editor_description_": "All the rock meshes that make up the base cave"
@@ -253,11 +261,59 @@ transform = Transform( -2.11201, -2.06266, 0.566043, -0.317678, -0.4851, -2.9435
 [node name="boulder_rock13" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
 transform = Transform( -2.11201, -2.06266, 0.566043, -0.317678, -0.4851, -2.94356, 3.77237, -4.145, 0.239288, -35.6815, 16.5172, -67.416 )
 
+[node name="boulder_rock27" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
+transform = Transform( -2.42689, 0.0745268, -0.458076, -0.362319, 0.781948, 2.93092, 0.101163, 4.58845, -0.492036, -63.1161, 8.23758, -144.723 )
+
+[node name="boulder_rock28" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
+transform = Transform( 0.621581, 4.30727, -0.849642, 0.346529, 1.18071, 2.87758, 2.3505, -1.31311, -0.199552, -64.992, 5.18036, -161.049 )
+
+[node name="boulder_rock29" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
+transform = Transform( 0.621581, 2.67114, -0.849642, 0.34653, 0.732217, 2.87759, 2.3505, -0.814323, -0.199552, -26.4265, 9.45047, -181.143 )
+
 [node name="boulder_rock8" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
 transform = Transform( 2.99769, -0.117378, 0.00677585, 0, -0.172901, -2.99501, 0.117575, 2.99271, -0.172769, 8.09107, 3.57292, -109.008 )
 
+[node name="boulder_rock30" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
+transform = Transform( 1.91458, -0.847346, 0.638445, 0.385934, -0.694318, -2.91837, 0.349643, 5.40631, -0.274733, 35.3097, 15.8489, -134.116 )
+
+[node name="boulder_rock31" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
+transform = Transform( 1.32708, -3.94516, -0.35686, 0.651195, 0.21664, 1.66054, -1.32349, -3.84928, 0.459205, 38.3823, 17.2739, -147.484 )
+
 [node name="boulder_rock9" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
-transform = Transform( -2.21717, -0.788359, 0.0455122, 0, -0.136146, -2.35833, 1.04405, -2.92652, 0.168948, 13.132, 11.0837, -102.726 )
+transform = Transform( -2.21717, -0.788359, 0.0455122, 0, -0.136146, -2.35833, 1.04405, -2.92652, 0.168948, 18.2156, 6.94603, -91.9304 )
+
+[node name="boulder_rock16" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
+transform = Transform( -2.40187, 0.967256, 0.0459245, -0.0665967, -0.179109, -2.36235, -0.482125, -4.79398, 0.0975265, 26.5827, 5.00275, -112.128 )
+
+[node name="boulder_rock17" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
+transform = Transform( 1.21475, 4.24929, 0.0459245, -0.0642148, 0.182545, -2.36235, -2.12747, 2.42076, 0.0975265, -0.0328289, 0.849981, -173.596 )
+
+[node name="boulder_rock19" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
+transform = Transform( 0.659451, 4.55992, -0.576402, -0.0222512, 1.25048, 2.28621, 2.36019, -1.26228, 0.182604, -42.7772, -1.88833, -165.401 )
+
+[node name="boulder_rock20" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
+transform = Transform( 1.18183, 1.95676, -0.171984, -0.123421, 0.24769, 2.34731, 2.14335, -1.06468, 0.229997, -60.3844, 5.02246, -145.278 )
+
+[node name="boulder_rock21" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
+transform = Transform( -2.43369, -0.207082, -0.171983, -0.154478, -0.23266, 2.34731, -0.243244, 2.21964, 0.229996, -54.6696, 1.05331, -135.509 )
+
+[node name="boulder_rock22" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
+transform = Transform( 1.26413, 0.113857, -0.859513, 0.004497, 1.40445, 0.213254, 0.899373, -0.167056, 1.20703, -40.0577, -0.57202, -115.631 )
+
+[node name="boulder_rock23" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
+transform = Transform( -2.43369, -0.207082, -0.171983, -0.154478, -0.23266, 2.34731, -0.243244, 2.21964, 0.229996, -4.11326, 5.99859, -181.29 )
+
+[node name="boulder_rock25" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
+transform = Transform( -2.14078, 0.0108556, -1.15101, -0.270683, 2.17839, 0.491654, 1.16175, 0.527561, -2.00644, 27.4737, 1.34282, -152.558 )
+
+[node name="boulder_rock32" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
+transform = Transform( 1.14918, 0.00852678, -2.08866, -0.514888, 1.71105, -0.251182, 2.10241, 0.414382, 1.08015, 17.136, 2.5484, -162.876 )
+
+[node name="boulder_rock26" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
+transform = Transform( -2.44014, 0.010286, -1.31196, -0.308533, 2.06409, 0.560403, 1.3242, 0.499879, -2.287, 21.4213, -2.58921, -116.517 )
+
+[node name="boulder_rock24" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
+transform = Transform( 2.3685, 0.113857, -0.859513, 0.00842571, 1.40445, 0.213254, 1.68509, -0.167056, 1.20703, 8.96776, 2.52282, -170.164 )
 
 [node name="boulder_rock12" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
 transform = Transform( 0.172929, -3.01373, 0.173983, 0, -0.136146, -2.35833, 2.44458, -0.321667, 0.0185695, 26.7576, 11.0837, -89.9889 )
@@ -278,7 +334,7 @@ transform = Transform( 2.06734, 2.17035, -0.125293, 0, -0.172901, -2.99501, -2.1
 transform = Transform( 2.95412, 0.521777, -0.0301221, 0, -0.172901, -2.99501, -0.742705, 4.19097, -0.241942, 8.71772, 2.9209, -67.6777 )
 
 [node name="boulder_rock14" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
-transform = Transform( -3.03195, -0.00742733, 0.000428922, 0, -0.247429, -4.28599, 0.691017, -5.50551, 0.31783, -34.8801, 0.703751, -60.722 )
+transform = Transform( -3.03195, -0.00742733, 0.000428922, 0, -0.247429, -4.28599, 0.691017, -5.50551, 0.31783, -34.6221, 0.75726, -59.5898 )
 
 [node name="boulder_rock15" parent="ValleyBase/Ext" instance=ExtResource( 3 )]
 transform = Transform( 2.1572, 3.0238, -0.174562, 0, -0.172901, -2.99501, -2.23979, 4.60079, -0.265601, -34.6307, 11.0912, -20.4948 )
@@ -306,6 +362,9 @@ transform = Transform( -1.35796, 0, -1.04203, 0, 2.18027, 0, 0.811632, 0, -4.820
 
 [node name="floor_end" parent="ValleyBase/Ext" instance=ExtResource( 7 )]
 transform = Transform( 0.549456, 0, 8.1519, 0, 0.702, 0, -3.96566, 0, 0.842671, -8.66638, 0.418703, -85.7444 )
+
+[node name="floor_end2" parent="ValleyBase/Ext" instance=ExtResource( 7 )]
+transform = Transform( 0.75081, 0, 8.11779, 0, 0.702, 0, -5.41892, 0, 1.12475, -12.728, 0.418703, -118.243 )
 
 [node name="Height Collision" type="StaticBody" parent="ValleyBase"]
 transform = Transform( 0.986205, 0, 0.16553, 0, 1, 0, -0.16553, 0, 0.986205, -8.17364, 8.36651, -47.8546 )
@@ -480,6 +539,177 @@ multimesh = SubResource( 5 )
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.1336, 10.5842, 0.239151 )
 multimesh = SubResource( 6 )
 
+[node name="Multis14" type="Spatial" parent="ValleyBase/Decor/FloorDecor"]
+transform = Transform( -1, 0, -1.50996e-07, 0, 0.8, 0, 1.50996e-07, 0, -1, -13.0596, 0.167144, -176.692 )
+
+[node name="pebbles1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis14"]
+transform = Transform( 1, 0, 0, 0, 0.326624, 0, 0, 0, 1, 0, 4.41707, 0 )
+multimesh = SubResource( 3 )
+
+[node name="Shurb1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis14"]
+transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.71082, 10.728, 4.37691 )
+multimesh = SubResource( 4 )
+
+[node name="Shrub2_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis14"]
+transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -0.846676, 10.728, 9.0085 )
+multimesh = SubResource( 5 )
+
+[node name="Shrub3_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis14"]
+transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.1336, 10.5842, 0.239151 )
+multimesh = SubResource( 6 )
+
+[node name="Multis15" type="Spatial" parent="ValleyBase/Decor/FloorDecor"]
+transform = Transform( -1, 0, -1.50996e-07, 0, 0.8, 0, 1.50996e-07, 0, -1, -25.8818, 0.167144, -176.692 )
+
+[node name="pebbles1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis15"]
+transform = Transform( 1, 0, 0, 0, 0.326624, 0, 0, 0, 1, 0, 4.41707, 0 )
+multimesh = SubResource( 3 )
+
+[node name="Shurb1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis15"]
+transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.71082, 10.728, 4.37691 )
+multimesh = SubResource( 4 )
+
+[node name="Shrub2_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis15"]
+transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -0.846676, 10.728, 9.0085 )
+multimesh = SubResource( 5 )
+
+[node name="Shrub3_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis15"]
+transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.1336, 10.5842, 0.239151 )
+multimesh = SubResource( 6 )
+
+[node name="Multis16" type="Spatial" parent="ValleyBase/Decor/FloorDecor"]
+transform = Transform( -0.808812, 0, -0.588068, 0, 0.8, 0, 0.588068, 0, -0.808812, -30.0974, 0.167144, -174.891 )
+
+[node name="pebbles1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis16"]
+transform = Transform( 1, 0, 0, 0, 0.326624, 0, 0, 0, 1, 0, 4.41707, 0 )
+multimesh = SubResource( 3 )
+
+[node name="Shurb1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis16"]
+transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.71082, 10.728, 4.37691 )
+multimesh = SubResource( 4 )
+
+[node name="Shrub2_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis16"]
+transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -0.846676, 10.728, 9.0085 )
+multimesh = SubResource( 5 )
+
+[node name="Shrub3_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis16"]
+transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.1336, 10.5842, 0.239151 )
+multimesh = SubResource( 6 )
+
+[node name="Multis17" type="Spatial" parent="ValleyBase/Decor/FloorDecor"]
+transform = Transform( -0.866758, 0, 0.49873, 0, 0.8, 0, -0.49873, 0, -0.866758, -21.8852, -0.591652, -192.626 )
+
+[node name="pebbles1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis17"]
+transform = Transform( 1, 0, -2.98023e-08, 0, 0.326624, 0, 2.98023e-08, 0, 1, 0, 4.58828, 0 )
+multimesh = SubResource( 3 )
+
+[node name="Shurb1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis17"]
+transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.71082, 10.728, 4.37691 )
+multimesh = SubResource( 4 )
+
+[node name="Shrub2_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis17"]
+transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -0.846676, 10.728, 9.0085 )
+multimesh = SubResource( 5 )
+
+[node name="Shrub3_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis17"]
+transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.1336, 10.5842, 0.239151 )
+multimesh = SubResource( 6 )
+
+[node name="Multis18" type="Spatial" parent="ValleyBase/Decor/FloorDecor"]
+transform = Transform( -0.172136, 0, 0.985073, 0, 0.8, 0, -0.985073, 0, -0.172136, 29.7716, -0.0363283, -174.938 )
+
+[node name="pebbles1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis18"]
+transform = Transform( 1, 0, 0, 0, 0.326624, 0, 0, 0, 1, 0, 4.48828, 0 )
+multimesh = SubResource( 3 )
+
+[node name="Shurb1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis18"]
+transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.71082, 10.728, 4.37691 )
+multimesh = SubResource( 4 )
+
+[node name="Shrub2_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis18"]
+transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -0.846676, 10.728, 9.0085 )
+multimesh = SubResource( 5 )
+
+[node name="Shrub3_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis18"]
+transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.1336, 10.5842, 0.239151 )
+multimesh = SubResource( 6 )
+
+[node name="Multis19" type="Spatial" parent="ValleyBase/Decor/FloorDecor"]
+transform = Transform( -0.289132, 0, -0.957289, 0, 0.8, 0, 0.957289, 0, -0.289132, -50.2347, 0.15337, -146.101 )
+
+[node name="pebbles1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis19"]
+transform = Transform( 1, 0, 0, 0, 0.326624, 0, 0, 0, 1, 0, 4.41707, 0 )
+multimesh = SubResource( 3 )
+
+[node name="Shurb1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis19"]
+transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.71082, 10.728, 4.37691 )
+multimesh = SubResource( 4 )
+
+[node name="Shrub2_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis19"]
+transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -0.846676, 10.728, 9.0085 )
+multimesh = SubResource( 5 )
+
+[node name="Shrub3_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis19"]
+transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.1336, 10.5842, 0.239151 )
+multimesh = SubResource( 6 )
+
+[node name="Multis20" type="Spatial" parent="ValleyBase/Decor/FloorDecor"]
+transform = Transform( -0.289132, 0, -0.957289, 0, 0.8, 0, 0.957289, 0, -0.289132, -71.5526, -0.108404, -144.465 )
+
+[node name="pebbles1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis20"]
+transform = Transform( 1, 0, 0, 0, 0.326624, 0, 0, 0, 1, 0, 4.41707, 0 )
+multimesh = SubResource( 3 )
+
+[node name="Shurb1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis20"]
+transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.7108, 10.2544, 4.37691 )
+multimesh = SubResource( 4 )
+
+[node name="Shrub2_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis20"]
+transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -0.846676, 10.728, 9.0085 )
+multimesh = SubResource( 5 )
+
+[node name="Shrub3_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis20"]
+transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.1336, 10.5842, 0.239151 )
+multimesh = SubResource( 6 )
+
+[node name="Multis21" type="Spatial" parent="ValleyBase/Decor/FloorDecor"]
+transform = Transform( -0.289132, -0.0145817, -0.957116, 0, 0.799855, -0.0190404, 0.957289, -0.00440415, -0.289079, -75.7666, -1.07118, -131.588 )
+
+[node name="pebbles1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis21"]
+transform = Transform( 1, 0, 0, 0, 0.326624, 0, 0, 0, 1, 0, 4.41707, 0 )
+multimesh = SubResource( 3 )
+
+[node name="Shurb1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis21"]
+transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.71082, 10.728, 4.37691 )
+multimesh = SubResource( 4 )
+
+[node name="Shrub2_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis21"]
+transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -0.846676, 10.728, 9.0085 )
+multimesh = SubResource( 5 )
+
+[node name="Shrub3_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis21"]
+transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.1336, 10.5842, 0.239151 )
+multimesh = SubResource( 6 )
+
+[node name="Multis22" type="Spatial" parent="ValleyBase/Decor/FloorDecor"]
+transform = Transform( -0.289132, -0.00594793, -0.95726, 0, 0.799976, -0.00776664, 0.957289, -0.00179647, -0.289123, -84.9031, -0.635337, -123.99 )
+
+[node name="pebbles1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis22"]
+transform = Transform( 1, 0, 0, 0, 0.326624, 0, 0, 0, 1, 0, 4.41707, 0 )
+multimesh = SubResource( 3 )
+
+[node name="Shurb1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis22"]
+transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.71082, 10.728, 4.37691 )
+multimesh = SubResource( 4 )
+
+[node name="Shrub2_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis22"]
+transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -0.846676, 10.728, 9.0085 )
+multimesh = SubResource( 5 )
+
+[node name="Shrub3_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis22"]
+transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.1336, 10.5842, 0.239151 )
+multimesh = SubResource( 6 )
+
 [node name="Multis11" type="Spatial" parent="ValleyBase/Decor/FloorDecor"]
 transform = Transform( -1, 0, -1.50996e-07, 0, 0.8, 0, 1.50996e-07, 0, -1, -11.896, -0.0733509, -130.208 )
 
@@ -597,10 +827,25 @@ transform = Transform( 1.58258, 0, 0, 0, 3.31808, 0, 0, 0, 3.31808, -20.0832, 1.
 transform = Transform( -2.10371, 0, 0.378518, 0, 4.42691, 0, -0.180536, 0, -4.4107, -19.6661, 1.01006, -86.5886 )
 
 [node name="medium_rock8" parent="ValleyBase/Decor/FloorDecor" instance=ExtResource( 13 )]
-transform = Transform( -1.95491, 0, -1.67274, 0, 4.42691, 0, 0.797822, 0, -4.09872, -5.34873, 0.0323629, -87.6073 )
+transform = Transform( -1.95491, 0, -1.67274, 0, 4.42691, 0, 0.797822, 0, -4.09872, -6.03374, 0.472642, -89.1384 )
 
 [node name="medium_rock9" parent="ValleyBase/Decor/FloorDecor" instance=ExtResource( 12 )]
 transform = Transform( 2.32685, 0, 0, 0, 3.50461, 0, 0, 0, 3.50461, -19.6827, -0.264505, -71.5057 )
+
+[node name="medium_rock19" parent="ValleyBase/Decor/FloorDecor" instance=ExtResource( 13 )]
+transform = Transform( -1.93289, 0.159524, 1.77449, 0, 4.40913, -0.396375, -0.849768, -0.362856, -4.03629, -43.3142, 1.5437, -145.293 )
+
+[node name="medium_rock21" parent="ValleyBase/Decor/FloorDecor" instance=ExtResource( 13 )]
+transform = Transform( -1.53488, 0, -3.03999, 0, 4.42691, 0, 1.44994, 0, -3.21807, -36.1456, 0.669249, -120.485 )
+
+[node name="medium_rock20" parent="ValleyBase/Decor/FloorDecor" instance=ExtResource( 12 )]
+transform = Transform( 2.02581, 0, 1.7241, 0, 3.50461, 0, -1.1447, 0, 3.05119, -25.1528, -0.264505, -107.112 )
+
+[node name="medium_rock22" parent="ValleyBase/Decor/FloorDecor" instance=ExtResource( 12 )]
+transform = Transform( 1.63242, 0, -2.49743, 0, 3.50461, 0, 1.65815, 0, 2.45868, 1.63442, -0.264505, -116.013 )
+
+[node name="medium_rock23" parent="ValleyBase/Decor/FloorDecor" instance=ExtResource( 12 )]
+transform = Transform( -2.51544, 4.04823, -1.45045, 2.77823, 3.91616, -1.16711e-07, 0.658038, -1.05901, -5.54456, 18.6042, -1.21158, -132.1 )
 
 [node name="medium_rock10" parent="ValleyBase/Decor/FloorDecor" instance=ExtResource( 12 )]
 transform = Transform( 0.288731, 0, 3.47752, 0, 2.3045, 0, -2.30887, 0, 0.434875, -18.75, 0.127786, -59.1319 )
@@ -664,7 +909,25 @@ material/0 = null
 material/1 = null
 
 [node name="tree_28" type="MeshInstance" parent="ValleyBase/Decor/trees"]
-transform = Transform( 1.48316, 0.239939, 0.999991, -0.551016, 1.40444, -0.00547609, -0.96222, -0.23114, 1.56363, 14.5635, -2.4356, -53.3127 )
+transform = Transform( 1.48316, 0.239939, 0.999991, -0.551016, 1.40444, -0.00547609, -0.96222, -0.23114, 1.56363, 14.629, -5.0525, -52.601 )
+mesh = ExtResource( 4 )
+material/0 = null
+material/1 = null
+
+[node name="tree_37" type="MeshInstance" parent="ValleyBase/Decor/trees"]
+transform = Transform( 1.6346, -0.0819893, 0.865843, 0.314529, 1.39164, -0.378616, -0.811421, 0.374269, 1.59747, 27.2559, 0.678131, -69.1079 )
+mesh = ExtResource( 4 )
+material/0 = null
+material/1 = null
+
+[node name="tree_38" type="MeshInstance" parent="ValleyBase/Decor/trees"]
+transform = Transform( 0.582999, -0.139581, -1.75852, -0.424375, 2.36917, -0.248621, 1.70566, 0.637168, 0.53921, 4.60657, -5.9933, -83.3045 )
+mesh = ExtResource( 4 )
+material/0 = null
+material/1 = null
+
+[node name="tree_39" type="MeshInstance" parent="ValleyBase/Decor/trees"]
+transform = Transform( -1.40873, -0.0221104, 0.260919, -0.0128936, 1.71203, 0.0320724, -0.260661, 0.0348088, -1.41171, -15.8151, -3.64414, -71.2195 )
 mesh = ExtResource( 4 )
 material/0 = null
 material/1 = null
@@ -706,18 +969,18 @@ material/0 = null
 material/1 = null
 
 [node name="tree_7" type="MeshInstance" parent="ValleyBase/Decor/trees"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.3671, -11.2485, 13.0512 )
+transform = Transform( 2.31433, 0, 0, 0, 2.31433, 0, 0, 0, 2.31433, 27.3671, -11.2485, 13.0512 )
 mesh = ExtResource( 10 )
 material/0 = null
 
 [node name="tree_8" type="MeshInstance" parent="ValleyBase/Decor/trees"]
-transform = Transform( -0.842434, 0, 0.5388, 0, 0.882073, 0, -0.5388, 0, -0.842434, 26.3889, -11.2223, 17.2024 )
+transform = Transform( -1.57571, 0, 1.00778, 0, 1.64985, 0, -1.00778, 0, -1.57571, 26.3889, -11.2223, 17.2024 )
 mesh = ExtResource( 4 )
 material/0 = null
 material/1 = null
 
 [node name="tree_9" type="MeshInstance" parent="ValleyBase/Decor/trees"]
-transform = Transform( 0.776002, 0, -0.63073, 0, 0.765909, 0, 0.63073, 0, 0.776002, 31.9808, -10.6954, 19.6418 )
+transform = Transform( 1.16872, 0, -0.949928, 0, 1.15352, 0, 0.949928, 0, 1.16872, 31.9808, -10.6954, 19.6418 )
 mesh = ExtResource( 10 )
 material/0 = null
 
@@ -771,37 +1034,21 @@ mesh = ExtResource( 10 )
 material/0 = null
 
 [node name="tree_19" type="MeshInstance" parent="ValleyBase/Decor/trees"]
-transform = Transform( 0.726389, 0.259401, -0.636451, -0.147853, 0.963335, 0.223885, 0.671191, -0.0685267, 0.73811, -4.34466, -7.46787, -50.1373 )
+transform = Transform( 0.726389, 0.259401, -0.636451, -0.147853, 0.963335, 0.223885, 0.671191, -0.0685267, 0.73811, -4.45056, -7.86116, -50.1093 )
 mesh = ExtResource( 10 )
 material/0 = null
 
 [node name="tree_20" type="MeshInstance" parent="ValleyBase/Decor/trees"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.720734, -11.0957, -56.0397 )
+transform = Transform( -0.701086, 0.16778, 0.693057, 0.0351787, 0.97888, -0.201388, -0.712208, -0.116809, -0.692181, -3.10346, -3.92523, -43.0663 )
 mesh = ExtResource( 4 )
 material/0 = null
 material/1 = null
 
 [node name="tree_24" type="MeshInstance" parent="ValleyBase/Decor/trees"]
-transform = Transform( -1.21175, 0.153021, -0.865129, 0.124538, 1.48889, 0.0889141, 0.869686, 0, -1.21813, -6.43332, -11.0957, -55.9857 )
+transform = Transform( 0.280085, -0.0441852, -1.46962, -0.0287858, 1.4956, -0.0504521, 1.47001, 0.0377058, 0.279024, 3.04161, -10.7979, -63.3319 )
 mesh = ExtResource( 4 )
 material/0 = null
 material/1 = null
-
-[node name="tree_21" type="MeshInstance" parent="ValleyBase/Decor/trees"]
-transform = Transform( -0.513257, 0, -0.858235, 0, 0.855216, 0, 0.858235, 0, -0.513257, 4.50493, -11.0957, -53.8501 )
-mesh = ExtResource( 4 )
-material/0 = null
-material/1 = null
-
-[node name="tree_22" type="MeshInstance" parent="ValleyBase/Decor/trees"]
-transform = Transform( 0.624534, 0, -0.780998, 0, 1, 0, 0.780998, 0, 0.624534, -0.637902, -10.7091, -51.9583 )
-mesh = ExtResource( 10 )
-material/0 = null
-
-[node name="tree_23" type="MeshInstance" parent="ValleyBase/Decor/trees"]
-transform = Transform( 0.514858, 0, -0.0856866, 0, 0.52194, 0, 0.0856866, 0, 0.514858, 2.81355, -10.7091, -54.6662 )
-mesh = ExtResource( 10 )
-material/0 = null
 
 [node name="tree_31" type="MeshInstance" parent="ValleyBase/Decor/trees"]
 transform = Transform( 1.10768, -0.1341, -0.90854, 0.173882, 1.09841, -0.0633012, 0.908705, -0.0467182, 1.11959, 19.1833, -1.1032, -41.1281 )
@@ -829,9 +1076,56 @@ mesh = ExtResource( 10 )
 material/0 = null
 
 [node name="tree_32" type="MeshInstance" parent="ValleyBase/Decor/trees"]
-transform = Transform( 1.33822, -0.107037, 0.522154, 0.297777, 1.03899, -0.401512, -0.45103, 0.368378, 1.28416, 13.3716, -2.22133, -49.7456 )
+transform = Transform( 1.33822, -0.107037, 0.522154, 0.297777, 1.03899, -0.401512, -0.45103, 0.368378, 1.28416, 13.3716, -3.77173, -49.7456 )
 mesh = ExtResource( 10 )
 material/0 = null
+
+[node name="tree_40" type="MeshInstance" parent="ValleyBase/Decor/trees"]
+transform = Transform( 2.44088, 0.501723, 1.18192, -0.636292, 2.07954, -0.184917, -1.19143, -0.0827151, 2.52014, -24.0607, -2.51937, -54.5032 )
+mesh = ExtResource( 10 )
+material/0 = null
+
+[node name="tree_41" type="MeshInstance" parent="ValleyBase/Decor/trees"]
+transform = Transform( -1.82476, 0.362618, 0.715622, 0.410301, 1.50298, -0.246985, -0.753028, -0.0597821, -1.86869, -15.2352, -6.86319, -58.8129 )
+mesh = ExtResource( 10 )
+material/0 = null
+
+[node name="tree_42" type="MeshInstance" parent="ValleyBase/Decor/trees"]
+transform = Transform( -0.588344, 0.222452, -1.45963, -0.0346217, 1.20212, 0.325049, 1.48774, 0.115946, -0.569664, -8.07271, -1.06819, -77.4957 )
+mesh = ExtResource( 10 )
+material/0 = null
+
+[node name="tree_43" type="MeshInstance" parent="ValleyBase/Decor/trees"]
+transform = Transform( 2.55856, 0.392288, -1.07511, -0.574049, 2.11991, -0.0526544, 1.0429, 0.204469, 2.60859, -16.2369, -2.08854, -80.7481 )
+mesh = ExtResource( 10 )
+material/0 = null
+
+[node name="tree_44" type="MeshInstance" parent="ValleyBase/Decor/trees"]
+transform = Transform( -1.55914, -0.258987, 0.126026, -0.327368, 1.1979, 0.130031, -0.150359, 0.0774397, -1.58994, 16.0901, -4.94289, -74.1819 )
+mesh = ExtResource( 10 )
+material/0 = null
+
+[node name="tree_46" type="MeshInstance" parent="ValleyBase/Decor/trees"]
+transform = Transform( 1.01178, -0.258987, -1.19294, 0.139109, 1.1979, -0.323615, 1.23193, 0.0774397, 1.0163, 21.5195, -5.7683, -60.7893 )
+mesh = ExtResource( 10 )
+material/0 = null
+
+[node name="tree_45" type="MeshInstance" parent="ValleyBase/Decor/trees"]
+transform = Transform( -0.262728, 0.015754, -2.80961, -0.221538, 2.15866, 0.0412692, 2.80094, 0.172215, -0.260277, 13.7795, -2.08854, -88.3784 )
+mesh = ExtResource( 10 )
+material/0 = null
+
+[node name="small_rock1" parent="ValleyBase/Decor" instance=ExtResource( 166 )]
+transform = Transform( 2.57074, 0, 0, 0, 2.57074, 0, 0, 0, 2.57074, -12.972, 1.19905, -132.275 )
+
+[node name="small_rock2" parent="ValleyBase/Decor" instance=ExtResource( 166 )]
+transform = Transform( -0.953607, 0, -2.38733, 0, 1.94462, 0, 2.38733, 0, -0.953607, -11.9322, 1.19905, -133.709 )
+
+[node name="small_rock3" parent="ValleyBase/Decor" instance=ExtResource( 166 )]
+transform = Transform( -0.150081, 0.712361, -2.38733, 2.5387, 0.306049, 9.45741e-09, 0.375724, -1.78338, -0.953607, -13.1321, 1.56739, -134.527 )
+
+[node name="small_rock4" parent="ValleyBase/Decor" instance=ExtResource( 166 )]
+transform = Transform( -1.41659, 0.0717935, -3.55434, 0.255857, 2.88875, -1.03033e-08, 3.54639, -0.179733, -1.41976, -14.3189, 1.01425, -133.42 )
 
 [node name="Outside" type="Node" parent="."]
 __meta__ = {
