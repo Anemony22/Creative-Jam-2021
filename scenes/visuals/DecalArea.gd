@@ -47,10 +47,11 @@ func _physics_process(_delta):
 		# 	plane_visual.translation = plane.center()
 		# 	add_child(plane_visual)
 
-		if decal_mesh:
-			decal_texture = decal_mesh.get_surface_material(0).get_shader_param("decal")
-			decal_mesh.queue_free()
-			time_out = 0
+		# Used to reinitialise mesh for moving decal.
+		# if decal_mesh:
+		# 	decal_texture = decal_mesh.get_surface_material(0).get_shader_param("decal")
+		# 	decal_mesh.queue_free()
+		# 	time_out = 0
 
 		decal_mesh = generate_decal_mesh_instance(bodies, area_planes)
 
@@ -68,7 +69,7 @@ func _physics_process(_delta):
 		
 		emit_signal("mesh_ready")
 		
-		# set_physics_process(false)
+		set_physics_process(false)
 	elif time_out == TIME_WAIT_MAX:
 		# Free up resources if not intersecting with any bodies after the time out period expires.
 		queue_free()
