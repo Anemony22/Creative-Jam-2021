@@ -12,7 +12,6 @@ animations = [ {
 } ]
 
 [node name="Animated_Decal" type="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true

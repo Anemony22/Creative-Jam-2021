@@ -39,6 +39,12 @@ func _ready():
 
 
 func _on_AnimatedSprite_frame_changed():
+	update_decal()
+
+func _on_Decal_mesh_ready():
+	update_decal()
+
+func update_decal():
 	var current_frame = sprite_animator.frame
 	var sprite_frames = sprite_animator.frames
 	
@@ -46,6 +52,8 @@ func _on_AnimatedSprite_frame_changed():
 	
 	decal_area.update_mesh_texture(sprite_texture)
 
+func stop():
+	sprite_animator.stop()
 
-func _on_Decal_mesh_ready():
+func play():
 	sprite_animator.play(animation_name)
