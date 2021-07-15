@@ -12,6 +12,7 @@ export(Vector2) var offset_texture = Vector2(0, 0)
 export(Texture) var decal_texture
 
 signal mesh_ready
+signal interacted
 
 var time_out = 0
 var decal_shader = preload("decal_shader.shader")

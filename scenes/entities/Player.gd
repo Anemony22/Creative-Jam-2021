@@ -8,6 +8,8 @@ var velocity = Vector3()
 
 onready var prev_angle = rotation.y
 
+onready var decal = preload("res://scenes/visuals/DecalArea.tscn")
+
 func get_input():
 	var input_dir = Vector3()
 
@@ -40,7 +42,8 @@ func _unhandled_input(event):
 				
 				if collision.has_node("Interactable"):
 					var interactable = collision.get_node("Interactable")
-					print("Interacted with " + interactable.title)
+					if collision.get_filename() == decal.get_path():
+						collision.emit_signal("interacted")
 
 
 func _physics_process(delta):
@@ -73,7 +76,7 @@ func _physics_process(delta):
 		if collision.has_node("Interactable"):
 			var interactable = collision.get_node("Interactable")
 			
-			$HUD/RayCheck/HBoxContainer/Interact.text = "Interact with " + interactable.title
+			$HUD/RayCheck/HBoxContainer/Interact.text = interactable.hud_text
 			$HUD/RayCheck.visible = true
 		else:
 			$HUD/RayCheck.visible = false

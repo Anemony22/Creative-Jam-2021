@@ -57,3 +57,10 @@ func stop():
 
 func play():
 	sprite_animator.play(animation_name)
+
+
+func _on_Decal_interacted():
+	if sprite_animator.playing:
+		stop()
+	else:
+		play()

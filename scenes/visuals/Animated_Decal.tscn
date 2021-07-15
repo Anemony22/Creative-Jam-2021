@@ -25,4 +25,5 @@ frames = SubResource( 1 )
 [node name="Decal" parent="." instance=ExtResource( 2 )]
 
 [connection signal="frame_changed" from="AnimatedSprite" to="." method="_on_AnimatedSprite_frame_changed"]
+[connection signal="interacted" from="Decal" to="." method="_on_Decal_interacted"]
 [connection signal="mesh_ready" from="Decal" to="." method="_on_Decal_mesh_ready"]
