@@ -19,35 +19,35 @@
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 30, 1, 30 )
 
-[sub_resource type="PlaneMesh" id=4]
+[sub_resource type="PlaneMesh" id=2]
 
-[sub_resource type="MultiMesh" id=9]
+[sub_resource type="MultiMesh" id=3]
 transform_format = 1
 instance_count = 20
 mesh = ExtResource( 6 )
 transform_array = PoolVector3Array( 0.266378, 0.00475529, 0.0731124, -0.0105479, 0.275305, 0.020524, -0.0725036, -0.0225805, 0.265629, -7.52684, -5.75987, -49.4102, -0.15699, -0.0112999, -0.123188, 0.00482832, 0.198325, -0.0243453, 0.123611, -0.0220979, -0.155501, -12.7962, -5.75987, -43.7942, 0.0790617, 0.035017, -0.211751, 0.031504, 0.221323, 0.0483627, 0.212302, -0.0458831, 0.0716798, -15.791, -5.75987, -47.7519, -0.236856, -0.00719155, 0.0870591, -0.00351265, 0.252175, 0.0112744, -0.087285, 0.00936654, -0.236696, -12.0026, -5.75987, -42.9092, -0.161578, 0.0110259, -0.319197, -0.00493067, 0.357591, 0.014848, 0.31935, 0.0110998, -0.161272, -11.8566, -5.75987, -40.5298, 0.0277353, 0.0272268, -0.230103, -0.0278309, 0.230459, 0.0239144, 0.23003, 0.0246, 0.0306374, -12.1754, -5.75987, -45.6798, -0.0607218, -0.0490335, -0.257965, -0.0498495, 0.26211, -0.0380874, 0.257808, 0.0391324, -0.0681232, -14.0012, -5.75987, -40.7701, 0.365484, 0.00526395, -0.190483, -0.0298361, 0.408519, -0.045958, 0.188205, 0.0545401, 0.362621, -8.817, -5.75987, -46.5821, -0.393952, -0.0991999, -0.154182, -0.119471, 0.416086, 0.0375541, 0.139066, 0.0764397, -0.40451, -16.2126, -5.75987, -42.0716, -0.00867334, 0.0102349, -0.161662, 0.0279587, 0.159558, 0.0086017, 0.159554, -0.027403, -0.0102952, -11.3943, -5.75987, -39.2147, 0.141917, 0.0394756, -0.070985, -0.0242899, 0.156993, 0.0387436, 0.0775061, -0.0230812, 0.142119, -13.7648, -5.75987, -35.3551, -0.23328, 0.0261094, -0.104552, 0.0147859, 0.254708, 0.0306165, 0.106744, 0.0217783, -0.232731, -10.6868, -5.75987, -38.9366, -0.15922, -0.0251797, -0.130156, -0.0214781, 0.205625, -0.0135058, 0.130817, 0.00311366, -0.160632, -16.4243, -5.75987, -33.4869, 0.355508, -0.0401922, 0.136447, 0.0570256, 0.376768, -0.0375968, -0.130312, 0.0552271, 0.355792, -8.57332, -5.75987, -52.9561, -0.366853, 0.0350492, -0.172044, 0.0643126, 0.397647, -0.0561256, 0.163376, -0.0778316, -0.364225, -6.93321, -5.75987, -61.368, 0.380701, 0.0375823, -0.0385303, -0.030539, 0.377469, 0.0664401, 0.0443214, -0.0627255, 0.376738, -7.69398, -5.75987, -56.1383, -0.121645, 0.0220147, 0.0568552, 0.00536136, 0.13026, -0.0389664, -0.0607323, -0.0325956, -0.117319, -15.0791, -5.75987, -42.9733, -0.044621, 0.039235, 0.225288, -0.0275143, 0.226948, -0.0449737, -0.227018, -0.0352176, -0.0388302, -15.2524, -5.75987, -44.5005, -0.131846, 0.0302499, -0.228424, -0.0171009, 0.261165, 0.0444563, 0.229783, 0.0367933, -0.127758, -12.7917, -5.75987, -53.3655, -0.477682, -0.0818721, 0.0493264, -0.0722238, 0.473837, 0.0870533, -0.0626088, 0.0780481, -0.476765, -15.758, -5.75987, -54.417 )
 
-[sub_resource type="MultiMesh" id=10]
+[sub_resource type="MultiMesh" id=4]
 transform_format = 1
 instance_count = 6
 mesh = ExtResource( 9 )
 transform_array = PoolVector3Array( -1.81614, 0.362651, -0.284254, 0.276357, 1.78219, 0.508037, 0.368704, 0.450509, -1.78095, -10.8452, -6.94137, -39.2371, 0.705303, -0.170429, 1.74589, 0.702054, 1.75188, -0.112602, -1.60758, 0.690299, 0.716812, -11.7847, -6.94137, -55.5084, -1.48646, -0.0553577, 0.591705, -0.227622, 1.52538, -0.429114, -0.54897, -0.482583, -1.42425, -10.0467, -6.94137, -55.6735, 0.593736, -0.267764, 1.21593, -0.245494, 1.29549, 0.405158, -1.22062, -0.390797, 0.509968, -13.2885, -6.94137, -50.4019, 1.34559, 0.164397, -0.116479, -0.134187, 1.31798, 0.310032, 0.150292, -0.295126, 1.31967, -8.00189, -6.94137, -51.8244, -0.681233, 0.259354, -0.989491, 0.283087, 1.19021, 0.117067, 0.982964, -0.163028, -0.719471, -7.2321, -6.94137, -46.2763 )
 
-[sub_resource type="MultiMesh" id=11]
+[sub_resource type="MultiMesh" id=5]
 transform_format = 1
 instance_count = 6
 mesh = ExtResource( 5 )
 transform_array = PoolVector3Array( 1.75997, 0.502347, -0.6755, -0.162021, 1.73836, 0.870627, 0.826076, -0.729308, 1.60992, -7.78106, -6.94562, -51.9053, -1.81446, -0.573027, -0.200019, -0.432612, 1.66332, -0.840755, 0.425693, -0.752105, -1.70698, -10.3137, -6.94562, -45.9597, 1.53509, -0.948869, 1.3966, 0.104726, 1.9374, 1.20119, -1.68519, -0.743954, 1.34685, -9.76598, -6.94562, -59.9747, -0.426366, 0.0542685, -2.03653, -0.0700935, 2.07903, 0.0700757, 2.03604, 0.0829375, -0.424055, -15.8626, -6.94562, -49.7479, 1.57429, -0.356936, -0.975455, 0.626568, 1.73901, 0.374883, 0.828449, -0.636963, 1.57011, -10.2398, -6.94562, -62.1565, -1.38807, 0.0749762, -1.47706, -0.398339, 1.9319, 0.472403, 1.42431, 0.613365, -1.30736, -15.4372, -6.94562, -43.1497 )
 
-[sub_resource type="MultiMesh" id=12]
+[sub_resource type="MultiMesh" id=6]
 transform_format = 1
 instance_count = 7
 mesh = ExtResource( 8 )
 transform_array = PoolVector3Array( -1.54043, 0.064814, 0.406855, -0.0767886, 1.50195, -0.530005, -0.404765, -0.531602, -1.44783, -5.64685, -6.94137, -33.4257, 1.65069, -0.783467, -0.0569067, 0.690956, 1.51114, -0.762158, 0.373684, 0.666696, 1.66064, -5.97801, -6.94137, -46.7264, 0.720083, -0.212921, -1.29782, 0.338376, 1.4598, -0.0517506, 1.27089, -0.268032, 0.749117, -7.49558, -6.94137, -49.9312, 0.534096, 0.544507, -1.72826, 0.400635, 1.72169, 0.66625, 1.76716, -0.554896, 0.371292, -9.57034, -6.94137, -47.2011, 0.00187386, -0.169288, 1.46641, 0.252161, 1.4449, 0.166482, -1.45446, 0.250285, 0.0307524, -5.24618, -6.94137, -59.1235, -0.835762, -0.624817, 1.28024, -0.907524, 1.37765, 0.0799112, -1.09809, -0.663015, -1.04044, -6.36553, -6.94137, -53.4954, -1.49593, 0.238351, -1.10926, -0.129076, 1.78795, 0.558253, 1.12721, 0.521052, -1.40818, -6.5241, -6.94137, -44.8635 )
 
-[sub_resource type="CubeMesh" id=2]
+[sub_resource type="CubeMesh" id=7]
 
-[sub_resource type="BoxShape" id=3]
+[sub_resource type="BoxShape" id=8]
 
 [node name="Main" type="Node"]
 script = ExtResource( 2 )
@@ -164,7 +164,7 @@ shape = SubResource( 1 )
 
 [node name="plane_(multi-alignment)" type="MeshInstance" parent="ValleyBase/Decor"]
 transform = Transform( 5.38493, 0, 0, 0, 1, 0, 0, 0, 14.7374, -11.2729, 1.24225, -47.3859 )
-mesh = SubResource( 4 )
+mesh = SubResource( 2 )
 material/0 = null
 __meta__ = {
 "_edit_lock_": true
@@ -177,247 +177,247 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.425268, 0 )
 
 [node name="pebbles1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis"]
 transform = Transform( 1, 0, 0, 0, 0.326624, 0, 0, 0, 1, 0, 4.41707, 0 )
-multimesh = SubResource( 9 )
+multimesh = SubResource( 3 )
 
 [node name="Shurb1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.71082, 10.728, 4.37691 )
-multimesh = SubResource( 10 )
+multimesh = SubResource( 4 )
 
 [node name="Shrub2_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -0.846676, 10.728, 9.0085 )
-multimesh = SubResource( 11 )
+multimesh = SubResource( 5 )
 
 [node name="Shrub3_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.1336, 10.728, 0.239151 )
-multimesh = SubResource( 12 )
+multimesh = SubResource( 6 )
 
 [node name="Multis6" type="Spatial" parent="ValleyBase/Decor/FloorDecor"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.48444, -0.425268, 17.9303 )
 
 [node name="pebbles1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis6"]
 transform = Transform( 1, 0, 0, 0, 0.326624, 0, 0, 0, 1, 0, 4.09579, 0 )
-multimesh = SubResource( 9 )
+multimesh = SubResource( 3 )
 
 [node name="Shurb1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis6"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.71082, 10.2319, 4.37691 )
-multimesh = SubResource( 10 )
+multimesh = SubResource( 4 )
 
 [node name="Shrub2_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis6"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -0.846676, 10.6182, 9.0085 )
-multimesh = SubResource( 11 )
+multimesh = SubResource( 5 )
 
 [node name="Shrub3_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis6"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.1336, 10.3605, 0.239151 )
-multimesh = SubResource( 12 )
+multimesh = SubResource( 6 )
 
 [node name="Multis7" type="Spatial" parent="ValleyBase/Decor/FloorDecor"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0945, -0.425268, 21.445 )
 
 [node name="pebbles1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis7"]
 transform = Transform( 1, 0, 0, 0, 0.326624, 0, 0, 0, 1, 0, 3.89813, 0 )
-multimesh = SubResource( 9 )
+multimesh = SubResource( 3 )
 
 [node name="Shurb1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis7"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.71082, 10.0227, 4.37691 )
-multimesh = SubResource( 10 )
+multimesh = SubResource( 4 )
 
 [node name="Shrub2_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis7"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -0.846676, 10.1753, 9.0085 )
-multimesh = SubResource( 11 )
+multimesh = SubResource( 5 )
 
 [node name="Shrub3_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis7"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.1336, 9.98185, 0.239151 )
-multimesh = SubResource( 12 )
+multimesh = SubResource( 6 )
 
 [node name="Multis8" type="Spatial" parent="ValleyBase/Decor/FloorDecor"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 51.2135, -0.425268, -16.3575 )
 
 [node name="pebbles1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis8"]
 transform = Transform( 1, 0, 0, 0, 0.326624, 0, 0, 0, 1, 0, 4.00907, 0 )
-multimesh = SubResource( 9 )
+multimesh = SubResource( 3 )
 
 [node name="Shurb1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis8"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.71082, 10.3021, -4.47135 )
-multimesh = SubResource( 10 )
+multimesh = SubResource( 4 )
 
 [node name="Shrub2_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis8"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -0.846679, 10.728, 9.63366 )
-multimesh = SubResource( 11 )
+multimesh = SubResource( 5 )
 
 [node name="Shrub3_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis8"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.1336, 10.1939, 0.239151 )
-multimesh = SubResource( 12 )
+multimesh = SubResource( 6 )
 
 [node name="Multis9" type="Spatial" parent="ValleyBase/Decor/FloorDecor"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 63.8806, -0.425268, -3.08938 )
 
 [node name="pebbles1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis9"]
 transform = Transform( 1, 0, 0, 0, 0.326624, 0, 0, 0, 1, 0, 4.09579, 0 )
-multimesh = SubResource( 9 )
+multimesh = SubResource( 3 )
 
 [node name="Shurb1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis9"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.71082, 10.728, 4.37691 )
-multimesh = SubResource( 10 )
+multimesh = SubResource( 4 )
 
 [node name="Shrub2_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis9"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -0.846676, 10.728, 9.0085 )
-multimesh = SubResource( 11 )
+multimesh = SubResource( 5 )
 
 [node name="Shrub3_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis9"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.1336, 10.728, 0.239151 )
-multimesh = SubResource( 12 )
+multimesh = SubResource( 6 )
 
 [node name="Multis10" type="Spatial" parent="ValleyBase/Decor/FloorDecor"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 75.0167, -0.425268, 8.13764 )
 
 [node name="pebbles1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis10"]
 transform = Transform( 1, 0, 0, 0, 0.326624, 0, 0, 0, 1, 0, 4.09579, 0 )
-multimesh = SubResource( 9 )
+multimesh = SubResource( 3 )
 
 [node name="Shurb1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis10"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.71082, 10.728, 4.37691 )
-multimesh = SubResource( 10 )
+multimesh = SubResource( 4 )
 
 [node name="Shrub2_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis10"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -0.846676, 10.728, 9.0085 )
-multimesh = SubResource( 11 )
+multimesh = SubResource( 5 )
 
 [node name="Shrub3_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis10"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.1336, 10.728, 0.239151 )
-multimesh = SubResource( 12 )
+multimesh = SubResource( 6 )
 
 [node name="Multis2" type="Spatial" parent="ValleyBase/Decor/FloorDecor"]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -22.8492, -0.558379, -110.96 )
 
 [node name="pebbles1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis2"]
 transform = Transform( 1, 0, 0, 0, 0.326624, 0, 0, 0, 1, 0, 4.41707, 0 )
-multimesh = SubResource( 9 )
+multimesh = SubResource( 3 )
 
 [node name="Shurb1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis2"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.71082, 10.6463, 4.37691 )
-multimesh = SubResource( 10 )
+multimesh = SubResource( 4 )
 
 [node name="Shrub2_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis2"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -0.846676, 10.728, 9.0085 )
-multimesh = SubResource( 11 )
+multimesh = SubResource( 5 )
 
 [node name="Shrub3_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis2"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.1336, 10.728, 0.239151 )
-multimesh = SubResource( 12 )
+multimesh = SubResource( 6 )
 
 [node name="Multis3" type="Spatial" parent="ValleyBase/Decor/FloorDecor"]
 transform = Transform( -1, 0, -1.50996e-07, 0, 0.8, 0, 1.50996e-07, 0, -1, -23.5716, -0.0733509, -134.184 )
 
 [node name="pebbles1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis3"]
 transform = Transform( 1, 0, 0, 0, 0.326624, 0, 0, 0, 1, 0, 4.41707, 0 )
-multimesh = SubResource( 9 )
+multimesh = SubResource( 3 )
 
 [node name="Shurb1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis3"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.71082, 10.728, 4.37691 )
-multimesh = SubResource( 10 )
+multimesh = SubResource( 4 )
 
 [node name="Shrub2_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis3"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -0.846676, 10.728, 9.0085 )
-multimesh = SubResource( 11 )
+multimesh = SubResource( 5 )
 
 [node name="Shrub3_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis3"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.1336, 10.5842, 0.239151 )
-multimesh = SubResource( 12 )
+multimesh = SubResource( 6 )
 
 [node name="Multis11" type="Spatial" parent="ValleyBase/Decor/FloorDecor"]
 transform = Transform( -1, 0, -1.50996e-07, 0, 0.8, 0, 1.50996e-07, 0, -1, -11.896, -0.0733509, -130.208 )
 
 [node name="pebbles1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis11"]
 transform = Transform( 1, 0, 0, 0, 0.326624, 0, 0, 0, 1, 0, 4.41707, 0 )
-multimesh = SubResource( 9 )
+multimesh = SubResource( 3 )
 
 [node name="Shurb1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis11"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.71082, 10.728, 4.37691 )
-multimesh = SubResource( 10 )
+multimesh = SubResource( 4 )
 
 [node name="Shrub2_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis11"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -0.846676, 10.728, 9.0085 )
-multimesh = SubResource( 11 )
+multimesh = SubResource( 5 )
 
 [node name="Shrub3_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis11"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.1336, 10.728, 0.239151 )
-multimesh = SubResource( 12 )
+multimesh = SubResource( 6 )
 
 [node name="Multis12" type="Spatial" parent="ValleyBase/Decor/FloorDecor"]
 transform = Transform( -3.89284e-08, -0.363864, 0.890578, -1.98813e-08, 0.712463, 0.45483, -1, 0, -4.37114e-08, 49.0768, 25.8656, -88.7946 )
 
 [node name="pebbles1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis12"]
 transform = Transform( 1, 0, 0, 0, 0.326624, 0, 0, 0, 1, 0, 4.41707, 0 )
-multimesh = SubResource( 9 )
+multimesh = SubResource( 3 )
 
 [node name="Shurb1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis12"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.71082, 10.728, 4.37691 )
-multimesh = SubResource( 10 )
+multimesh = SubResource( 4 )
 
 [node name="Shrub2_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis12"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -0.846676, 10.728, 9.0085 )
-multimesh = SubResource( 11 )
+multimesh = SubResource( 5 )
 
 [node name="Shrub3_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis12"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.1336, 10.728, 0.239151 )
-multimesh = SubResource( 12 )
+multimesh = SubResource( 6 )
 
 [node name="Multis13" type="Spatial" parent="ValleyBase/Decor/FloorDecor"]
 transform = Transform( -4.36525e-08, 0.326409, -0.912977, -2.26787e-09, 0.730381, 0.408012, 1, 1.5905e-08, -3.89284e-08, -70.1583, 22.7191, -29.5612 )
 
 [node name="pebbles1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis13"]
 transform = Transform( 1, 0, 0, 0, 0.326624, 0, 0, 0, 1, 0, 4.41707, 0 )
-multimesh = SubResource( 9 )
+multimesh = SubResource( 3 )
 
 [node name="Shurb1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis13"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.71082, 10.728, 4.37691 )
-multimesh = SubResource( 10 )
+multimesh = SubResource( 4 )
 
 [node name="Shrub2_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis13"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -0.846676, 10.728, 9.0085 )
-multimesh = SubResource( 11 )
+multimesh = SubResource( 5 )
 
 [node name="Shrub3_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis13"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.1336, 10.728, 0.239151 )
-multimesh = SubResource( 12 )
+multimesh = SubResource( 6 )
 
 [node name="Multis4" type="Spatial" parent="ValleyBase/Decor/FloorDecor"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 0.8, 0, -1, 0, -4.37114e-08, 31.701, 0.116575, -111.18 )
 
 [node name="pebbles1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis4"]
 transform = Transform( 1, 0, 0, 0, 0.326624, 0, 0, 0, 1, 0, 4.41707, 0 )
-multimesh = SubResource( 9 )
+multimesh = SubResource( 3 )
 
 [node name="Shurb1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis4"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.71082, 10.728, 4.37691 )
-multimesh = SubResource( 10 )
+multimesh = SubResource( 4 )
 
 [node name="Shrub2_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis4"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -0.846672, 10.728, 9.0085 )
-multimesh = SubResource( 11 )
+multimesh = SubResource( 5 )
 
 [node name="Shrub3_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis4"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.13361, 10.4645, 0.239151 )
-multimesh = SubResource( 12 )
+multimesh = SubResource( 6 )
 
 [node name="Multis5" type="Spatial" parent="ValleyBase/Decor/FloorDecor"]
 transform = Transform( -4.37114e-08, 0, 1, -0.0510461, 0.798957, -2.2313e-09, -0.998696, -0.0408369, -4.36544e-08, 31.701, -0.841984, -123.69 )
 
 [node name="pebbles1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis5"]
 transform = Transform( 1, 0, 0, 0, 0.326624, 0, 0, 0, 1, 0, 4.41707, 0 )
-multimesh = SubResource( 9 )
+multimesh = SubResource( 3 )
 
 [node name="Shurb1_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis5"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.71082, 10.728, 4.37691 )
-multimesh = SubResource( 10 )
+multimesh = SubResource( 4 )
 
 [node name="Shrub2_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis5"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -0.846676, 10.728, 9.0085 )
-multimesh = SubResource( 11 )
+multimesh = SubResource( 5 )
 
 [node name="Shrub3_multi" type="MultiMeshInstance" parent="ValleyBase/Decor/FloorDecor/Multis5"]
 transform = Transform( 1, 0, 0, 0, 1.18326, 0, 0, 0, 1, -1.1336, 10.728, 0.239151 )
-multimesh = SubResource( 12 )
+multimesh = SubResource( 6 )
 
 [node name="medium_rock1" parent="ValleyBase/Decor/FloorDecor" instance=ExtResource( 11 )]
 transform = Transform( 2.67293, 0, 0, 0, 2.67293, 0, 0, 0, 2.67293, -20.1039, 1.04906, -35.912 )
@@ -683,20 +683,20 @@ __meta__ = {
 }
 
 [node name="TestInteractionCube" parent="." instance=ExtResource( 30 )]
-transform = Transform( 0.5, 0, 0, 0, 0.49922, 0.0279108, 0, -0.0279108, 0.49922, -3.92241, 2.27425, -5.80652 )
+transform = Transform( 0.5, 0, 0, 0, 0.49922, 0.0279108, 0, -0.0279108, 0.49922, -3.92241, 2.23022, -5.80406 )
 
 [node name="StaticBody" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.00866, -6.98358 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.72269, -6.98358 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="MeshInstance" type="MeshInstance" parent="StaticBody"]
-mesh = SubResource( 2 )
+mesh = SubResource( 7 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
-shape = SubResource( 3 )
+shape = SubResource( 8 )
 
 [node name="Interactable" parent="StaticBody" instance=ExtResource( 31 )]
 title = "another one"
