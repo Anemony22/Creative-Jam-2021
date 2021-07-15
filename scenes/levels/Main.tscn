@@ -4,6 +4,7 @@
 [ext_resource path="res://scenes/levels/Main.gd" type="Script" id=2]
 [ext_resource path="res://scenes/environment/rocks/large/boulder_rock1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/environment/rocks/large/flat_rock1.tscn" type="PackedScene" id=7]
+
 [ext_resource path="res://scenes/objects/interactables/artefacts/TestInteractionCube.tscn" type="PackedScene" id=30]
 [ext_resource path="res://scenes/objects/interactables/Interactable.tscn" type="PackedScene" id=31]
 
@@ -13,6 +14,7 @@ extents = Vector3( 30, 1, 30 )
 [sub_resource type="CubeMesh" id=2]
 
 [sub_resource type="BoxShape" id=3]
+
 
 [node name="Main" type="Node"]
 script = ExtResource( 2 )
@@ -108,6 +110,23 @@ __meta__ = {
 shape = SubResource( 1 )
 
 [node name="Decor" type="Node" parent="ValleyBase"]
+
+[node name="Decal_1" parent="CaveBase" instance=ExtResource( 31 )]
+transform = Transform( -0.784765, 0, 1.99383, 0, 5, 0, -9.96916, 0, -0.156953, -19.5304, 4.6575, 2.10371 )
+valid_nodes_paths = [ NodePath("../Ext/boulder_rock4") ]
+scale_texture = Vector2( 10, 5 )
+decal_texture = ExtResource( 30 )
+
+[node name="Decal_2" parent="CaveBase" instance=ExtResource( 31 )]
+transform = Transform( -0.218194, 0, 0.975905, 0, 1, 0, -0.975905, 0, -0.218194, -6.86364, 8.26229, 3.95727 )
+valid_nodes_paths = [ NodePath("../Ext/large_rock3") ]
+decal_texture = ExtResource( 32 )
+
+[node name="Animated_Decal" parent="CaveBase" instance=ExtResource( 33 )]
+transform = Transform( 0.130797, 0, -0.999658, 0, 5, 0, 4.99829, 0, 0.0261595, 16.9484, 7.6245, -2.57691 )
+valid_nodes_paths = [ NodePath("../Ext/boulder_rock3") ]
+decal_offset = Vector2( 2.5, 2.5 )
+frames = SubResource( 4 )
 
 [node name="Outside" type="Node" parent="."]
 __meta__ = {
