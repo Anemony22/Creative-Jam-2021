@@ -90,6 +90,10 @@ func update_mesh_texture(texture: Texture):
 	material.set_shader_param("decal", texture)
 	material.set_shader_param("scale", scale)
 
+func update_texture_offset(offset: Vector2):
+	var material = decal_mesh.get_surface_material(0)
+	material.set_shader_param("offset", offset)
+
 # Generates a new mesh instance for the decal
 func generate_decal_mesh_instance(bodies, area_planes):
 	var new_mesh = MeshInstance.new()
