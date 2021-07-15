@@ -75,5 +75,7 @@ func _physics_process(delta):
 			
 			$HUD/RayCheck/HBoxContainer/Interact.text = "Interact with " + interactable.title
 			$HUD/RayCheck.visible = true
+		else:
+			$HUD/RayCheck.visible = false
 	else:
 		$HUD/RayCheck.visible = false

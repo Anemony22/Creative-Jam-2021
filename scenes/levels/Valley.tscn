@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/levels/Valley.gd" type="Script" id=2]
@@ -13,6 +13,10 @@
 [ext_resource path="res://scenes/environment/rocks/medium/medium_rock1.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/environment/rocks/medium/medium_rock4.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/environment/rocks/medium/medium_rock5.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/visuals/Animated_Decal.tscn" type="PackedScene" id=14]
+[ext_resource path="res://resources/decal/animation/test_frames/playerGrey_up1.png" type="Texture" id=15]
+[ext_resource path="res://resources/decal/animation/test_frames/playerGrey_up2.png" type="Texture" id=16]
+[ext_resource path="res://scenes/objects/interactables/Interactable.tscn" type="PackedScene" id=31]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 28.973, 1, 60 )
@@ -42,6 +46,16 @@ transform_format = 1
 instance_count = 7
 mesh = ExtResource( 8 )
 transform_array = PoolVector3Array( -1.54043, 0.064814, 0.406855, -0.0767886, 1.50195, -0.530005, -0.404765, -0.531602, -1.44783, -5.64685, -6.94137, -33.4257, 1.65069, -0.783467, -0.0569067, 0.690956, 1.51114, -0.762158, 0.373684, 0.666696, 1.66064, -5.97801, -6.94137, -46.7264, 0.720083, -0.212921, -1.29782, 0.338376, 1.4598, -0.0517506, 1.27089, -0.268032, 0.749117, -7.49558, -6.94137, -49.9312, 0.534096, 0.544507, -1.72826, 0.400635, 1.72169, 0.66625, 1.76716, -0.554896, 0.371292, -9.57034, -6.94137, -47.2011, 0.00187386, -0.169288, 1.46641, 0.252161, 1.4449, 0.166482, -1.45446, 0.250285, 0.0307524, -5.24618, -6.94137, -59.1235, -0.835762, -0.624817, 1.28024, -0.907524, 1.37765, 0.0799112, -1.09809, -0.663015, -1.04044, -6.36553, -6.94137, -53.4954, -1.49593, 0.238351, -1.10926, -0.129076, 1.78795, 0.558253, 1.12721, 0.521052, -1.40818, -6.5241, -6.94137, -44.8635 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="BoxShape" id=8]
 
 [node name="Main" type="Node"]
 script = ExtResource( 2 )
@@ -672,3 +686,16 @@ material/0 = null
 __meta__ = {
 "_editor_description_": "The sun, sky plane and sun light for outside the cave"
 }
+
+[node name="Animated_Decal" parent="." instance=ExtResource( 14 )]
+transform = Transform( -0.231867, 0, 0.972748, 0, 1, 0, -0.972748, 0, -0.231867, -14.7581, 4.37341, -27.2675 )
+valid_nodes_paths = [ NodePath("../ValleyBase/Ext/boulder_rock6") ]
+frames = SubResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="Animated_Decal"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Animated_Decal/StaticBody"]
+shape = SubResource( 8 )
+
+[node name="Interactable" parent="Animated_Decal/StaticBody" instance=ExtResource( 31 )]
+title = "Play Animation"
