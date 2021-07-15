@@ -78,13 +78,13 @@ func _physics_process(_delta):
 		time_out += 1
 
 func update_mesh_texture(texture: Texture):
-	var scale = Vector2(1, 1)
+	var scale = scale_texture
 	var aspect = texture.get_size().aspect()
 
 	if aspect < 1:
-		scale.x = aspect
+		scale.x *= aspect
 	elif aspect > 1:
-		scale.y = 1/aspect
+		scale.y *= 1/aspect
 
 	var material = decal_mesh.get_surface_material(0)
 	material.set_shader_param("decal", texture)
