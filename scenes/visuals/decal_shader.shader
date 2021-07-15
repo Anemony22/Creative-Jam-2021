@@ -10,11 +10,11 @@ void fragment()
 	pos.x = (UV.x - offset.x) / scale.x;
 	pos.y = (UV.y - offset.y) / scale.y;
 	
-	bool inside = all(greaterThanEqual(pos, vec2(0))) && all(lessThanEqual(pos, vec2(1)));
+	bool inside = all(greaterThanEqual(pos, vec2(-0.5))) && all(lessThanEqual(pos, vec2(0.5)));
 	
 	if(inside)
 	{
-		vec4 colour = texture(decal, pos);
+		vec4 colour = texture(decal, pos + vec2(0.5));
 		
 		ALBEDO = colour.rgb;
 		ALPHA = colour.a;

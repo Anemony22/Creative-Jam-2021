@@ -284,8 +284,8 @@ func vertex_to_uv(vertices):
 		var uv = Vector2()
 		# uv.x = (vert.x / scale.x) * scale_texture.x
 		# uv.y = (vert.y / scale.y) * scale_texture.y
-		uv.x = (vert.x + 1) * scale.x * 0.5
-		uv.y = -(vert.y - 1) * scale.y * 0.5
+		uv.x = vert.x * scale.x * 0.5
+		uv.y = -vert.y * scale.y * 0.5
 		uv_pool.append(uv)
 
 	return uv_pool
