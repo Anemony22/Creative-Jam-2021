@@ -16,7 +16,7 @@ signal mesh_ready
 var time_out = 0
 var decal_shader = preload("decal_shader.shader")
 
-var decal_mesh
+var decal_mesh = null
 
 enum {INSIDE, PARTIALLY, OUTSIDE}
 
@@ -47,6 +47,11 @@ func _physics_process(_delta):
 		# 	plane_visual.translation = plane.center()
 		# 	add_child(plane_visual)
 
+		if decal_mesh:
+			decal_texture = decal_mesh.get_surface_material(0).get_shader_param("decal")
+			decal_mesh.queue_free()
+			time_out = 0
+
 		decal_mesh = generate_decal_mesh_instance(bodies, area_planes)
 
 		var decal_material = ShaderMaterial.new()
@@ -63,7 +68,7 @@ func _physics_process(_delta):
 		
 		emit_signal("mesh_ready")
 		
-		set_physics_process(false)
+		# set_physics_process(false)
 	elif time_out == TIME_WAIT_MAX:
 		# Free up resources if not intersecting with any bodies after the time out period expires.
 		queue_free()
@@ -190,13 +195,11 @@ func clip_mesh(mesh_verts, mesh_normals, area_planes):
 			var verts = pools[0]
 			var normals = pools[1]
 
-			pools = clip_mesh(verts, normals, area_planes)
-
-			verts = pools[0]
-			normals = pools[1]
-
-			new_vert_pool.append_array(verts)
-			new_normal_pool.append_array(normals)
+			status = is_in_area(verts, area_planes)
+			
+			if status == INSIDE or PARTIALLY:
+				new_vert_pool.append_array(verts)
+				new_normal_pool.append_array(normals)
 				
 	return [new_vert_pool, new_normal_pool]
 
@@ -207,7 +210,7 @@ func is_in_area(vertices, area_planes):
 
 	for vert in vertices:
 		for i in area_planes.size():
-			if vert.dot(area_planes[i].normal) > area_planes[i].d + 0.0001:
+			if vert.dot(area_planes[i].normal) > area_planes[i].d + 0.001:
 				sided_count[i] += 1
 
 	if sided_count.count(0) == area_planes.size():
